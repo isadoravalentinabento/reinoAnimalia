@@ -11,7 +11,9 @@
         <H1>Cadastro</H1>
 
         <label for="nome">Nome:</label>
-        <input type="name" name="name" id="nome">
+        <input type="name" name="nome" id="nome">
+
+        <br><br>
 
         <label for="email">email</label>
         <input type="email" name="email" id="email">
@@ -19,18 +21,29 @@
         <br><br>
 
         <label for="senha">senha</label>
-        <input type="password" name="passwod" id="senha">
+        <input type="password" name="senha" id="senha" required>
 
         <br><br>
 
-        <label for="senha">Confirma senha:</label>
-        <input type="password" name="password" id="senha">
+        <label for="confirmar_senha">Confirma senha:</label>
+        <input type="password" name="confirmar_senha" id="confirma_senha" required>
 
-        
-        
+        <br><br>
+
+        <label for="tipo_usuario">Cadastrar Como:</label>
+        <br>
+        <Select name="tipo_usuario">
+            <option value="estudante">Estudante</option>
+            <option value="professor">Professor</option>
+        </Select>
+            
+        <br><br>
         <button for="cancelar">Cancelar</button>
         <button for="salvar">Salvar</button>
        
     </form>
+
+    <?php
+?>
 </body>
 </html>
