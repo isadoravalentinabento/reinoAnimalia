@@ -32,7 +32,7 @@ if(trim($tipo_usuario) == ""){
 $conexao = new PDO(dsn, usuario, senha);
 
 // Tabela USER (em vez de usuario)
-$sql = "INSERT INTO user (nome, email, senha, tipo_usuario)
+$sql = "INSERT INTO useer (nome, email, senha, tipo_usuario)
         values (:nome, :email, :senha, :tipo_usuario)";  
 
 $comando = $conexao->prepare($sql); 

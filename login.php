@@ -7,7 +7,7 @@ $senha = $_POST['senha'];
 $conexao = new PDO(dsn, usuario, senha);
 
 $sql = "SELECT id_usuario, email
-        FROM user 
+        FROM useer 
         WHERE email = :usuario 
         AND senha = :senha";
 
