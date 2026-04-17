@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 include "validar.php";
 ?>
@@ -14,3 +15,7 @@ include "validar.php";
     <H1>FUNCINOU TELA 1</H1>
 </body>
 </html>
+=======
+reino vvvvv
+clearstatcache
+>>>>>>> 86d592a7a4014f49b868ace6fc2c4420af50b5b1
