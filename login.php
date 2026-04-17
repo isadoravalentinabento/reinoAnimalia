@@ -6,7 +6,6 @@ $senha = $_POST['senha'];
 
 $conexao = new PDO(dsn, usuario, senha);
 
-// Tabela USER (como você mudou no banco)
 $sql = "SELECT id_usuario, email
         FROM user 
         WHERE email = :usuario 
@@ -22,10 +21,9 @@ if($registro){
     session_start();
     $_SESSION['id_usuario'] = $registro['id_usuario'];
     $_SESSION['email'] = $registro['email'];
+    $_SESSION['nome'] = $registro ['nome'];
     header('location: teste.php');
-    exit;
 } else {
     header('location: login.html');
-    exit;
 }
 ?>
