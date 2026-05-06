@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 include "validar.php";
 ?>
@@ -11,7 +10,7 @@ include "validar.php";
     <title>Document</title>
 </head>
 <body>
-    <h1>Bem vindo <?=$_SESSION['email'] ?></h1>
+    <h1>Bem vindo</h1>
     <H1>FUNCINOU TELA 1</H1>
 </body>
 </html>
