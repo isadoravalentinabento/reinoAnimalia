@@ -32,10 +32,10 @@
 
         <label for="tipo_usuario">Cadastrar Como:</label>
         <br>
-        <Select name="tipo_usuario">
-            <option value="estudante">Estudante</option>
-            <option value="professor">Professor</option>
-        </Select>
+        <select name="tipo_usuario">
+            <option value="0">Estudante</option>
+            <option value="1">Professor</option>
+        </select>
             
         <br><br>
         <button for="cancelar">Cancelar</button>

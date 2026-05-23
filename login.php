@@ -6,7 +6,7 @@ $senha = $_POST['senha'];
 
 $conexao = new PDO(dsn, usuario, senha);
 
-$sql = "SELECT id_usuario, email
+$sql = "SELECT id_usuario, email, tipo_usuario
         FROM useer 
         WHERE email = :usuario 
         AND senha = :senha";
@@ -22,8 +22,13 @@ if($registro){
     $_SESSION['id_usuario'] = $registro['id_usuario'];
     $_SESSION['email'] = $registro['email'];
     $_SESSION['nome'] = $registro ['nome'];
+    $_SESSION['tipo_usuario'] = $registro ['tipo_usuario'];
     header('location: teste.php');
-} else {
-    header('location: login.html');
-}
+
+    if($registro['tipo_usuario'] == 1){
+        header('location: ProfInicio.php');
+    } else {
+        header('location: AlunoInicio.php');
+    }
+    }
 ?>
