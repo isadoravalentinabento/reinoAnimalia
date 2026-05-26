@@ -13,6 +13,7 @@
     <a href="#">Minhas Salas</a>
     <a href="ProfCTurma.php">Criar Sala</a>
     <a href="#">Sair</a>
+    <a href="ListagemTurma.php">Listagem</a>
 
    </nav>
 </body>

@@ -1,54 +1,116 @@
 <?php
 include "validar.php";
+include "configinc.php";
+
+$conexao = new PDO(dsn, usuario, senha);
+
+$sql = "SELECT * FROM turma";
+
+$comando = $conexao->prepare($sql);
+
+$comando->execute();
+
+$registro = $comando->fetchAll();
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Listagem</title>
+
+    <style>
+
+        #popup{
+            display: none;
+            position: fixed;
+
+            top: 50%;
+            left: 50%;
+
+            transform: translate(-50%, -50%);
+            background: lightblue;
+            padding: 30px;
+
+            border-radius: 10px;
+        }
+
+    </style>
+
 </head>
 <body>
 
-<h1>Bem vindo <?=$_SESSION['nome'] ?></h1>
+<table border="5">
 
-    
-     <table  border="1"><br>
 
-     <tr>
-        <th>Nome Turma</th>
-        <th>Código da turma</th>
-        <td>Entrar</td>
-     </tr>
+
+
+<tr>
+    <th>
+    <label for="pesquisa">Nome da sala</label>
+    <input type="text" id="pesquisa" name="pesquisa">
+    <button type="submit">Pesquisar</button>
+</th>
+</tr>
 
 <?php
-if(isset($_GET['filtro'])){
-    $filtro = $_GET['filtro'];
 
-    
-    include "configinc.php";
-    
-    $conexao = new PDO(dsn, usuario, senha);
-    
+   // if(isset($_GET['pesquisa'])){
+     //   $pesquisa = $_GET['pesquisa']
+    //}
 
-    $sql = " SELECT * FROM turma;
-                                   
-    $comando = $conexao -> prepare ( $sql);  
-    $comando -> execute();
-    $registro = $comando->fetchAll(); 
-    
-    foreach($registro as $aluno){
-        echo
-        "<tr>".
-        "<td>".$aluno['id_turma']."</td>".
-        "<td>".$aluno['nome_turma']."</td>".
-       
-        "<td><a href ='formulario_alterar_usuario.php?id=".$turma['id_turma']."'>Entrar</a></td>".
-        "</tr>";
-    }
+foreach($registro as $turma){
+
+    echo
+    "<tr>".
+
+    "<td>".$turma['nome_turma']."</td>".
+
+    "<td>
+
+        <button onclick='abrirPopup(".$turma['id_turma'].")'>
+            Entrar
+        </button>
+
+    </td>".
+
+    "</tr>";
 }
-
 ?>
-        </table>
-    </body>
+
+</table>
+
+<div id="popup">
+
+    <h2>Digite o código</h2>
+
+    <form action="EntrarTurma.php" method="post">
+
+        <input type="hidden" name="id_turma" id="id_turma">
+        <input type="text" name="codigo">
+
+        <br>
+        <br>
+
+        <button type="submit">Entrar</button>
+
+        <button type="button" onclick="fecharPopup()">Fechar</button>
+
+    </form>
+</div>
+
+<script>
+
+    function abrirPopup(id){
+      document.getElementById("popup").style.display = "block";
+      document.getElementById("id_turma").value = id;
+      }
+
+    function fecharPopup(){
+      document.getElementById("popup").style.display = "none";
+    }
+
+</script>
+
+</body>
 </html>

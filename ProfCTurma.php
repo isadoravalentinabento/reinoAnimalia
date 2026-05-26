@@ -6,7 +6,7 @@
     <title>Criar Turma</title>
 </head>
 <body>
-    <form action="CreateCad.php">
+    <form action="CreateCad.php" method="post">
 
         <H1>Criar Turma</H1>
 
