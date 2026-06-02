@@ -1,4 +1,3 @@
-// codigo que conecta com o banco de dados e pega os dados do formulário para criar uma turma
 <?php
 include "configinc.php";
 
@@ -20,9 +19,10 @@ $comando->bindValue(':codigo_turma', md5($codigo_turma));
 if ($comando->execute()){
     echo "<script>
             alert('Sala criada com sucesso');
-            window.location.href = '#';
+            window.location.href = 'ListagemTurma.php';
           </script>";
+       
 }else{
-    echo "<script>alert('Erro ao criar sala'); history.back();</script>";
+  echo "<script>alert('Erro ao criar sala'); history.back();</script>";
 }
 ?>

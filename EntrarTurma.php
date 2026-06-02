@@ -3,6 +3,8 @@
 include "validar.php";
 include "configinc.php";
 
+$id_aluno = $_SESSION['id_usuario'];
+
 $id_turma = $_POST ['id_turma'];
 $codigo = $_POST ['codigo'];
 
@@ -12,16 +14,33 @@ $sql = "SELECT * FROM turma
        WHERE id_turma = :id_turma
        AND codigo_turma = :codigo_turma";
 
-$comando -> $conexao->prepare($sql);
+$comando = $conexao->prepare($sql);
+
 $comando ->bindValue(':id_turma', $id_turma);
-$comando ->bindValue(':codigo_turma', $codigo_turma);
+$comando ->bindValue(':codigo_turma', md5($codigo));
 $comando -> execute();
+
 
 $registro = $comando->fetch();
 
+
 if($registro){
-    echo"Cod certinho";
+
+    $sql = "INSERT INTO aluno_turma (id_aluno, id_turma)
+            VALUES (:id_aluno, :id_turma)";
+
+    $comando = $conexao->prepare($sql);
+
+    $comando->bindValue(':id_aluno', $id_aluno);
+    $comando->bindValue(':id_turma', $id_turma);
+
+    $comando->execute();
+
+    header("Location: Turma.php?id=".$id_turma);
+    exit;
+
 }else{
-    echo "cod invalido";
+    echo "codigo deu erro";
 }
+
 ?>

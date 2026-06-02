@@ -23,6 +23,7 @@ if($registro){
     $_SESSION['email'] = $registro['email'];
     $_SESSION['nome'] = $registro ['nome'];
     $_SESSION['tipo_usuario'] = $registro ['tipo_usuario'];
+    
     //header('location: teste.php');
     if($registro['tipo_usuario'] == 1){
         header('location: ProfInicio.php');

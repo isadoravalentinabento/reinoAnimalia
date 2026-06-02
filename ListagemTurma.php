@@ -7,12 +7,10 @@ $conexao = new PDO(dsn, usuario, senha);
 $sql = "SELECT * FROM turma";
 
 $comando = $conexao->prepare($sql);
-
 $comando->execute();
 
 $registro = $comando->fetchAll();
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -55,6 +53,7 @@ $registro = $comando->fetchAll();
 
 <?php
 
+//tenho que fazer o filtro ainda
    // if(isset($_GET['pesquisa'])){
      //   $pesquisa = $_GET['pesquisa']
     //}
