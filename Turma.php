@@ -1,5 +1,7 @@
 <?php
 include "validar.php";
+include "AlunoMenu.php";
+include "TurmaMenu.php";
  
 $id_turma = $_GET ['id'];
 ?>
@@ -8,7 +10,7 @@ $id_turma = $_GET ['id'];
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Turma</title>
 </head>
 <body>
     <h1> sala funcionando <?=$id_turma?> </h1>

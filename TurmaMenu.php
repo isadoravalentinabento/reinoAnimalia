@@ -1,17 +1,18 @@
-<?php
-include "validar.php";
-include "AlunoMenu.php";
-?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Animalia</title>
+    <title>menu</title>
 </head>
 <body>
-    <h1>Bem vindo</h1>
-    <H1>FUNCINOU ALUNO</H1>
+    <nav>
+
+    <a href="#">Sala</a>
+    <a href="#">Turma</a>
+    <a href="#">Dados</a>
+    
+    </nav>
+    
 </body>
 </html>
