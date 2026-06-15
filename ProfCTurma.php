@@ -20,6 +20,11 @@
 
         <br><br>
 
+        <label for="observacao">Observações</label>
+        <input type="text" id="observacao" name="observacao">
+
+        <br><br>
+
         <button type="submit" for="cancelar">Cancelar</button>
         <button type="submit" for="salvar">Salvar</button>
 

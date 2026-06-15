@@ -10,6 +10,20 @@ $codigo = $_POST ['codigo'];
 
 $conexao = new PDO(dsn, usuario, senha);
 
+$sql = "SELECT * FROM aluno_turma
+        WHERE id_aluno = :id_aluno
+        AND id_turma = :id_turma";
+
+$comando = $conexao->prepare($sql);
+
+$comando->bindValue(':id_aluno', $id_aluno);
+$comando->bindValue(':id_turma', $id_turma);
+
+$comando->execute();
+
+$registro_aluno = $comando->fetch();
+
+
 $sql = "SELECT * FROM turma
        WHERE id_turma = :id_turma
        AND codigo_turma = :codigo_turma";
@@ -26,21 +40,22 @@ $registro = $comando->fetch();
 
 if($registro){
 
-    $sql = "INSERT INTO aluno_turma (id_aluno, id_turma)
-            VALUES (:id_aluno, :id_turma)";
-
+    if($registro_aluno){
+        header("Location: Turma.php?id=".$id_turma);
+        exit;
+    } else{
+        $sql = "INSERT INTO aluno_turma (id_aluno, id_turma)
+                VALUES (:id_aluno, :id_turma)";
+    
     $comando = $conexao->prepare($sql);
-
     $comando->bindValue(':id_aluno', $id_aluno);
     $comando->bindValue(':id_turma', $id_turma);
-
     $comando->execute();
 
     header("Location: Turma.php?id=".$id_turma);
-    exit;
-
+           exit;
+    }
 }else{
     echo "codigo deu erro";
 }
-
 ?>
