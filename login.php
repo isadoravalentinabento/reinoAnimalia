@@ -25,6 +25,10 @@ if($registro){
     $_SESSION['tipo_usuario'] = $registro ['tipo_usuario'];
     
     //header('location: teste.php');
+    
+
+
+    //se ele errar o gmail ou a senha voltar para página
     if($registro['tipo_usuario'] == 1){
         header('location: ProfInicio.php');
     } else {

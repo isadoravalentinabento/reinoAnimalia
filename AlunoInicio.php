@@ -31,8 +31,7 @@ foreach($registro as $turma){
             <h2>".$turma['nome_turma']."</h2>
             <p>".$turma['observacao']."</p>
         </div>
-    </a>
-    ";
+    </a>";
 
 }
 ?>
