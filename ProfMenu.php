@@ -10,9 +10,9 @@
 
     <a href="index.php">Incício</a>
     <a href="#">perfil</a>
-    <a href="#">Minhas Salas</a>
+    <a href="ProfInicio,php">Minhas Salas</a>
     <a href="ProfCTurma.php">Criar Sala</a>
-    <a href="#">Sair</a>
+    <a href="index.php">Sair</a>
     <a href="ListagemTurma.php">Listagem</a>
 
    </nav>

@@ -25,7 +25,7 @@ $comando->bindValue(':observacao', $observacao);
 if ($comando->execute()){
     echo "<script>
             alert('Sala criada com sucesso');
-            window.location.href = 'ListagemTurma.php';
+            window.location.href = 'ProfInicio.php';
           </script>";
        
 }else{

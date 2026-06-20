@@ -1,6 +1,11 @@
 <?php
 include "validar.php";
+
+/* Ketlin fazer uma função paara tipo usaurio ver o tipo de menu do seu tipo */
 include "AlunoMenu.php";
+include "ProfMenu.php";
+
+
 include "TurmaMenu.php";
  
 $id_turma = $_GET ['id'];
