@@ -29,7 +29,7 @@ $professor = $comando ->fetch();
 
 //aluno 
 
-$sql = "SELECT useer.nome FROM aluno_turma
+$sql = "SELECT useer.id_usuario, useer.nome FROM aluno_turma
         INNER JOIN useer ON aluno_turma.id_aluno = useer.id_usuario
         WHERE aluno_turma.id_turma = :id_turma";
 
@@ -50,18 +50,29 @@ $alunos = $comando ->fetchAll();
     <title>Participantes</title>
 </head>
 <body>
+
     <h2>Professor</h2>
-<p><?= $professor['nome'] ?></p>
+    <p><?= $professor['nome'] ?></p>
 
-<br><br>
+        <br><br>
 
-<h2>Alunos</h2> 
-<br>
+    <h2>Alunos</h2> 
+    <br>
 
 <?php
     foreach($alunos as $aluno){
-        echo "<p>".$aluno['nome']."</p>";
-}
+
+    echo "<p>".$aluno['nome'];
+
+    if($_SESSION['tipo_usuario'] == 1){
+
+        echo " <a href='ExpulsarAluno.php?id_aluno=".$aluno['id_usuario']."&id_turma=".$id_turma."'>
+                Expulsar
+              </a>";
+    }
+
+    echo "</p>";
+    }
 ?>
 
 
