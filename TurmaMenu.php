@@ -1,3 +1,7 @@
+<?php
+
+
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -9,7 +13,7 @@
     <nav>
 
     <a href="#">Sala</a>
-    <a href="#">Turma</a>
+    <a href="Participantes.php?id=<?=$id_turma?>">Turma</a>
     <a href="#">Dados</a>
     
     </nav>

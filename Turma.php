@@ -1,14 +1,17 @@
 <?php
+
 include "validar.php";
 
-/* Ketlin fazer uma função paara tipo usaurio ver o tipo de menu do seu tipo */
-include "AlunoMenu.php";
-include "ProfMenu.php";
+$id_turma = $_GET['id']; // PRIMEIRO
 
+if($_SESSION['tipo_usuario'] == 1){
+    include "ProfMenu.php";
+}else{
+    include "AlunoMenu.php";
+}
 
-include "TurmaMenu.php";
- 
-$id_turma = $_GET ['id'];
+include "TurmaMenu.php"; // DEPOIS
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
