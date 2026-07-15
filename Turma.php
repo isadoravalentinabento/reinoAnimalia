@@ -2,7 +2,7 @@
 
 include "validar.php";
 
-$id_turma = $_GET['id']; // PRIMEIRO
+$id_turma = $_GET['id']; 
 
 if($_SESSION['tipo_usuario'] == 1){
     include "ProfMenu.php";
@@ -10,8 +10,7 @@ if($_SESSION['tipo_usuario'] == 1){
     include "AlunoMenu.php";
 }
 
-include "TurmaMenu.php"; // DEPOIS
-
+include "TurmaMenu.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -21,8 +20,32 @@ include "TurmaMenu.php"; // DEPOIS
     <title>Turma</title>
 </head>
 <body>
-    <h1> sala funcionando <?=$id_turma?> </h1>
+
+    <div class="SalaParticipadas">
+
+    <h1>Sala funcionando <?=$id_turma?></h1>
+
+    <?php
+    if($_SESSION['tipo_usuario'] == 0){
+    ?>
+        <a href="SairTurma.php?id_turma=<?=$id_turma?>">
+            <button>Sair da turma</button>
+        </a>
+    <?php
+    }else{
+    ?>
+        <a href="ExcluirTurma.php?id_turma=<?=$id_turma?>">
+            <button>Excluir turma</button>
+        </a>
+    <?php
+    }
+    ?>
+</div>
+    
     <br><br>
     ver com a patricia ou com o lucas como fazer uma sala dinamica
+
+
+    
 </body>
 </html>
