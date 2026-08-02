@@ -9,7 +9,7 @@
     <!-- colocar o icone de Perfil  -->
      
     <nav>
-        <a href="#">Perfil </a> 
+        <a href="Perfil.php">Perfil </a> 
         <a href="AlunoInicio.php">Minhas Turmas</a>
         <a href="ListagemTurma.php">Pesquisar Turmas</a>
         <a href="#">Entrar</a>

@@ -27,7 +27,6 @@ $comando->execute();
 
 $professor = $comando ->fetch();
 
-//aluno 
 
 $sql = "SELECT useer.id_usuario, useer.nome FROM aluno_turma
         INNER JOIN useer ON aluno_turma.id_aluno = useer.id_usuario
