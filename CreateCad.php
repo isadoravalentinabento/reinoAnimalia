@@ -17,7 +17,7 @@ $sql = "INSERT INTO turma (nome_turma, codigo_turma, id_professor, observacao)
 
 $comando = $conexao->prepare($sql); 
 $comando->bindValue(':nome_turma', $nome_turma);
-$comando->bindValue(':codigo_turma', md5($codigo_turma));
+$comando->bindValue(':codigo_turma', $codigo_turma);
 $comando->bindValue(':id_professor', $id_professor);
 $comando->bindValue(':observacao', $observacao);
 
@@ -27,7 +27,6 @@ if ($comando->execute()){
             alert('Sala criada com sucesso');
             window.location.href = 'ProfInicio.php';
           </script>";
-       
 }else{
   echo "<script>alert('Erro ao criar sala'); history.back();</script>";
 }

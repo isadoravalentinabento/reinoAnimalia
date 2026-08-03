@@ -7,12 +7,10 @@
 </head>
 <body>
    <nav>
-    <a href="index.php">Incício</a>
     <a href="Perfil.php">perfil</a>
     <a href="ProfInicio.php">Minhas Salas</a>
     <a href="ProfCTurma.php">Criar Sala</a>
     <a href="index.php">Sair</a>
-    <a href="ListagemTurma.php">Listagem</a>
    </nav>
 </body>
 </html>

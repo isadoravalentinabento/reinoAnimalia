@@ -1,5 +1,5 @@
 <?php
-
+include "configinc.php";
 include "validar.php";
 
 $id_turma = $_GET['id']; 
@@ -11,6 +11,18 @@ if($_SESSION['tipo_usuario'] == 1){
 }
 
 include "TurmaMenu.php";
+
+$conexao = new PDO(dsn, usuario, senha);
+$sql = "SELECT nome_turma, codigo_turma, id_turma
+        FROM turma
+        WHERE id_turma = :id_turma";
+
+$comando = $conexao->prepare($sql);
+$comando->bindValue(':id_turma', $id_turma);
+$comando->execute();
+
+$turma = $comando->fetch();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -20,17 +32,31 @@ include "TurmaMenu.php";
     <title>Turma</title>
 </head>
 <body>
+   <h1>Sala <?=$turma['nome_turma']?></h1>
 
-    <div class="SalaParticipadas">
+    <div class="imagem-arvore" style="background: red">
+     <img src="img/arvore.png" alt="Árvore Filogenética" width="500">
 
-    <h1>Sala funcionando <?=$id_turma?></h1>
+    </div>
 
-  
-</div>
+   
     
+    <p>
+    ID da sala: <span id="IdTurma">••••</span>
+    </p>
 
-<div id="popup" style="color=red">
+    <p>
+    Código da turma: <span id="CodigoTurma">••••••</span></p>
 
+    <span onclick="mostrarInformacoes()" style="cursor:pointer;">
+
+    <img id="olho"
+         src="img/icons/hide (1).png"
+         width="30"> 
+
+</span>
+
+<br><br>
 
   <?php
     if($_SESSION['tipo_usuario'] == 0){
@@ -49,15 +75,36 @@ include "TurmaMenu.php";
     }
     ?>
 
-
-
-    <!--</button type="submit">Cancelar</button>
-    <button type="button" onclick="fecharPopup()"></button> -->
 </div>
-    <br><br>
-    ver com a patricia ou com o lucas como fazer uma sala dinamica
 
+<script>
 
-    
+let mostrando = false;
+
+function mostrarInformacoes(){
+
+    if(mostrando){
+
+        document.getElementById("IdTurma").innerHTML = "••••";
+        document.getElementById("CodigoTurma").innerHTML = "••••••";
+
+        document.getElementById("olho").src = "img/icons/hide (1).png";
+
+        mostrando = false;
+
+    }else{
+
+        document.getElementById("IdTurma").innerHTML = "<?=$turma['id_turma']?>";
+        document.getElementById("CodigoTurma").innerHTML = "<?=$turma['codigo_turma']?>";
+
+        document.getElementById("olho").src = "img/icons/view.png";
+
+        mostrando = true;
+
+    }
+
+}
+
+</script>
 </body>
 </html>

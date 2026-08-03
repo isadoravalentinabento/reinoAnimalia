@@ -31,7 +31,7 @@ $sql = "SELECT * FROM turma
 $comando = $conexao->prepare($sql);
 
 $comando ->bindValue(':id_turma', $id_turma);
-$comando ->bindValue(':codigo_turma', md5($codigo));
+$comando ->bindValue(':codigo_turma', $codigo);
 $comando -> execute();
 
 

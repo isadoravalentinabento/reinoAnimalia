@@ -25,11 +25,16 @@ $registro = $comando->fetchAll();
 <table border="5">
 <form action="" method="POST">
 <tr>
+   <!-- <th>
+    <label for="">ID</label>
+    </th> -->
+
+
     <th>
-    <label for="pesquisa">Nome da sala</label>
-    <input type="text" id="pesquisa" name="filtro">
-    <button type="submit">Pesquisar</button>
-</th>
+     <label for="pesquisa">Nome da sala</label>
+     <input type="text" id="pesquisa" name="filtro">
+     <button type="submit">Pesquisar</button>
+    </th>   
 </tr>
 </form>
 
