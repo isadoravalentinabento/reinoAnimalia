@@ -18,20 +18,25 @@ $comando->execute();
 $registro = $comando->fetch();
 
 if($registro){
+
     session_start();
+
     $_SESSION['id_usuario'] = $registro['id_usuario'];
     $_SESSION['email'] = $registro['email'];
-    $_SESSION['nome'] = $registro ['nome'];
-    $_SESSION['tipo_usuario'] = $registro ['tipo_usuario'];
-    
-    //header('location: teste.php');
-    
-    //se ele errar o gmail ou a senha voltar para página
+    $_SESSION['nome'] = $registro['nome'];
+    $_SESSION['tipo_usuario'] = $registro['tipo_usuario'];
+
     if($registro['tipo_usuario'] == 1){
-        header('location: ProfInicio.php');
-    } else {
-        header('location: AlunoInicio.php');
-        exit;
+        header("Location: ProfInicio.php");
+    }else{
+        header("Location: AlunoInicio.php");
     }
-    }
+    exit;
+}else{
+    echo "<script>
+            alert('E-mail ou senha incorretos!');
+            window.location.href='login.html';
+          </script>";
+    exit;
+}
 ?>

@@ -25,16 +25,18 @@ $registro = $comando->fetchAll();
 <table border="5">
 <form action="" method="POST">
 <tr>
-   <!-- <th>
+
+    <th>
     <label for="">ID</label>
-    </th> -->
+    </th> 
 
 
     <th>
      <label for="pesquisa">Nome da sala</label>
      <input type="text" id="pesquisa" name="filtro">
      <button type="submit">Pesquisar</button>
-    </th>   
+    </th>  
+
 </tr>
 </form>
 
@@ -61,6 +63,7 @@ foreach($registro as $turma){
     echo
     "<tr>".
 
+    "<td>".$turma['id_turma']."</td>".
     "<td>".$turma['nome_turma']."</td>".
 
     "<td>

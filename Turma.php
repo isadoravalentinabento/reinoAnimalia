@@ -32,15 +32,20 @@ $turma = $comando->fetch();
     <title>Turma</title>
 </head>
 <body>
+
    <h1>Sala <?=$turma['nome_turma']?></h1>
 
     <div class="imagem-arvore" style="background: red">
-     <img src="img/arvore.png" alt="Árvore Filogenética" width="500">
+     <a href="SalaArvore.php?id=<?=$id_turma?>">
+        <img src="img/arvore.png"
+         alt="Árvore Filogenética"
+         width="500">
+    </a>
 
     </div>
 
    
-    
+    <?php if($_SESSION['tipo_usuario'] == 1){ ?>
     <p>
     ID da sala: <span id="IdTurma">••••</span>
     </p>
@@ -54,9 +59,10 @@ $turma = $comando->fetch();
          src="img/icons/hide (1).png"
          width="30"> 
 
-</span>
+    </span>
+    <?php } ?>
 
-<br><br>
+    <br><br>
 
   <?php
     if($_SESSION['tipo_usuario'] == 0){
