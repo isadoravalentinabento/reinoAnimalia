@@ -1,0 +1,142 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    background-image: url("../img/polvoFundo.png");
+    background-position: center;
+    background-size: 101%;
+    background-repeat: no-repeat;
+
+    font-family: Georgia, "Times New Roman", serif;
+}
+.voltar {
+    position: absolute;
+
+
+    top: 25px;
+    left: 25px;
+    height: 10px;
+    color: white;
+
+    font-size: 20px;
+
+    text-decoration: underline;
+
+    z-index: 10;
+}
+
+.voltar:hover {
+    color: #afe5f3;
+}
+
+.login-area {
+    min-height: 100vh;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+}
+.login-box {
+    width: 550px;
+
+    padding: 50px 20px 15px;
+
+    background-color: rgba(35, 43, 105, 0.75);
+
+    border-radius: 15px;
+
+    box-sizing: border-box;
+
+    color: white;
+}
+
+.login-box h1 {
+    margin: 0 0 15px;
+
+    text-align: center;
+
+    font-size: 27px;
+
+    font-weight: normal;
+}
+
+.login-box label {
+    display: block;
+
+    margin-bottom: 4px;
+
+    font-size: 19px;
+}
+
+.login-box input {
+    width: 100%;
+
+    height: 32px;
+
+    margin-bottom: 10px;
+
+    padding: 5px 12px;
+
+    box-sizing: border-box;
+
+    border: none;
+
+    border-radius: 20px;
+
+    outline: none;
+
+    font-size: 16px;
+}
+.login-box button {
+    display: block;
+
+    width: 115px;
+    height: 30px;
+
+    margin: 7px auto 18px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background-color: #7042d3;
+
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.login-box button:hover {
+    background-color: #8b63e3;
+
+    transform: scale(1.05);
+}
+
+.links-login {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.links-login a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+}
+
+.links-login a:hover {
+    color: #afe5f3;
+
+    text-decoration: underline;
+}
