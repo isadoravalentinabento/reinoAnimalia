@@ -1,15 +1,12 @@
 body {
     margin: 0;
-
     background-image: url("../img/fundo 3d.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
     overflow: hidden;
 }
-
 h1 {
     color: aliceblue;
 }

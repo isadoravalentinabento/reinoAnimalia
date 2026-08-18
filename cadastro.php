@@ -1,49 +1,57 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Cadastro</title>
+
+    <link rel="stylesheet" href="css/cadastro.css?v=3">
 </head>
+
 <body>
-    <form action="create.php" method="post">
+<a href="index.php" class="voltar">
+    <img src="img/icons/arrow (1).png" alt="Voltar">
+</a>
 
-        <H1>Cadastro</H1>
+    <main class="cadastro-area">
 
-        <label for="nome">Nome:</label>
-        <input type="name" name="nome" id="nome">
+        <div class="cadastro-box">
 
-        <br><br>
+            <h1>Cadastro</h1>
 
-        <label for="email">email</label>
-        <input type="email" name="email" id="email">
+            <form action="create.php" method="post">
 
-        <br><br>
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" required>
 
-        <label for="senha">senha</label>
-        <input type="password" name="senha" id="senha" required>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" required>
 
-        <br><br>
+                <label for="senha">Senha:</label>
+                <input type="password" name="senha" id="senha" required>
 
-        <label for="confirmar_senha">Confirma senha:</label>
-        <input type="password" name="confirmar_senha" id="confirma_senha" required>
+                <label for="confirmar_senha">Confirma senha:</label>
+                <input type="password" name="confirmar_senha" id="confirma_senha" required>
 
-        <br><br>
+                <label for="tipo_usuario">Cadastrar Como:</label>
 
-        <label for="tipo_usuario">Cadastrar Como:</label>
-        <br>
-        <select name="tipo_usuario">
-            <option value="0">Estudante</option>
-            <option value="1">Professor</option>
-        </select>
-            
-        <br><br>
-        <button for="cancelar">Cancelar</button>
-        <button for="salvar">Salvar</button>
-       
-    </form>
+                <select name="tipo_usuario" id="tipo_usuario">
+                    <option value="0">Estudante</option>
+                    <option value="1">Professor</option>
+                </select>
 
-    <?php
-?>
+                <div class="botoes-cadastro">
+                    <a href="index.php" class="btn-cancelar">Cancelar</a>
+                    <button type="submit">Salvar</button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </main>
+
 </body>
 </html>
