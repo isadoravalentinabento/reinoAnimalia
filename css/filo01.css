@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+
+    background-image: url("../img/fundo 3d.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+
+    overflow: hidden;
+}
+
+.area-filo {
+    width: 100%;
+    min-height: 100vh;
+
+    display: grid;
+    grid-template-columns: 1fr 500px 1fr;
+
+    align-items: center;
+    gap: 20px;
+
+    padding: 40px;
+    box-sizing: border-box;
+}
+
+model-viewer {
+    display: block;
+
+    width: 500px;
+    height: 500px;
+
+    margin: 0 auto;
+}
+
+.conteudo-esquerda,
+.conteudo-direita {
+    width: 100%;
+    max-width: 350px;
+
+    background-color: rgba(4, 12, 53, 0.75);
+
+    padding: 25px;
+
+    border-radius: 25px;
+
+    color: white;
+
+    box-sizing: border-box;
+}
+
+.conteudo-esquerda h2,
+.conteudo-direita h2 {
+    margin-top: 0;
+
+    font-size: 28px;
+}
+
+.conteudo-esquerda p,
+.conteudo-direita p {
+    font-size: 18px;
+
+    line-height: 1.5;
+}
+.conteudo-esquerda {
+    justify-self: end;
+}
+
+.conteudo-direita {
+    justify-self: start;
+}
+.avancar-container {
+    position: fixed;
+
+    bottom: 30px;
+    left: 500px;
+
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+
+    z-index: 10;
+}
+.btn-avancar {
+    width: 180px;
+    height: 50px;
+
+    background-color: #0c1b6871;
+    color: white;
+
+    border: none;
+    border-radius: 30px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-avancar:hover {
+    background-color: #afe5f3;
+    color: #040C35;
+    transform: scale(1.05);
+}
