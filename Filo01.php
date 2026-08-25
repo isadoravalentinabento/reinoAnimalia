@@ -29,7 +29,7 @@ $turma = $comando->fetch();
 
     <title>Meu Modelo 3D</title>
 
-    <link rel="stylesheet" href="css/filo01.css?v=2">
+    <link rel="stylesheet" href="css/filo01.css?v=3">
 
     <script type="module"
         src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
@@ -38,14 +38,19 @@ $turma = $comando->fetch();
 </head>
 
 <body>
+
     <main class="area-filo">
 
         <section class="conteudo-esquerda">
-            <h2>Texte 1</h2>
 
-            <p>
-               aaaaaaaaaaaaaaaaaaaaaa
+            <h2 id="titulo-esquerda">
+                Características
+            </h2>
+
+            <p id="texto-esquerda">
+                Aqui estão as características do polvo.
             </p>
+
         </section>
 
 
@@ -62,18 +67,33 @@ $turma = $comando->fetch();
 
 
         <section class="conteudo-direita">
-            <h2>Texte 2</h2>
 
-            <p>
-                bbbbbbbbbbbbbbbb
+            <h2 id="titulo-direita">
+                Curiosidades
+            </h2>
+
+            <p id="texto-direita">
+                O polvo possui oito braços.
             </p>
+
         </section>
 
+
         <div class="avancar-container">
-            <button class="btn-avancar">Avançar</button>
+
+            <button
+                class="btn-avancar"
+                id="btn-avancar">
+
+                Avançar
+
+            </button>
+
         </div>
 
     </main>
 
+
+   
 </body>
 </html>

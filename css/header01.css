@@ -1,4 +1,120 @@
-nav{
+nav {
+    height: 45px;
+
     background-color: rgb(4, 4, 83);
-    color: aliceblue;
+
+    display: flex;
+    align-items: center;
+
+    padding: 0 10px;
+
+    box-sizing: border-box;
+}
+
+
+/* LINKS DO HEADER */
+
+nav > a {
+    color: white;
+
+    text-decoration: none;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    margin-right: 15px;
+}
+
+nav > a:hover {
+    color: #afe5f3;
+}
+
+
+/* ÍCONE DO PERFIL */
+
+nav .perfil {
+    display: flex;
+    align-items: center;
+
+    margin-right: 8px;
+}
+
+nav .perfil img {
+    width: 27px;
+    height: 27px;
+
+    border-radius: 50%;
+}
+
+
+/* MENU */
+
+.menu {
+    position: relative;
+
+    margin-left: auto;
+}
+
+
+/* BOTÃO ☰ */
+
+.menu-botao {
+    background: none;
+
+    border: none;
+
+    color: white;
+
+    font-size: 23px;
+
+    cursor: pointer;
+
+    padding: 0 5px;
+}
+
+
+/* CAIXINHA DO MENU */
+
+.menu-conteudo {
+    display: none;
+
+    position: absolute;
+
+    right: 0;
+
+    top: 35px;
+
+    width: 130px;
+
+    background-color: rgb(4, 4, 83);
+
+    border-radius: 5px;
+
+    padding: 5px 0;
+
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+
+    z-index: 10;
+}
+.menu-conteudo a {
+    display: block;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    padding: 8px 12px;
+}
+.menu-conteudo a:hover {
+    background-color: #232b69;
+
+    color: #afe5f3;
+}
+.menu:hover .menu-conteudo {
+    display: block;
 }
