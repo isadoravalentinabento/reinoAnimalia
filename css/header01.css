@@ -1,3 +1,7 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
 nav {
     height: 45px;
 
@@ -10,10 +14,6 @@ nav {
 
     box-sizing: border-box;
 }
-
-
-/* LINKS DO HEADER */
-
 nav > a {
     color: white;
 
@@ -30,9 +30,6 @@ nav > a:hover {
     color: #afe5f3;
 }
 
-
-/* ÍCONE DO PERFIL */
-
 nav .perfil {
     display: flex;
     align-items: center;
@@ -46,19 +43,11 @@ nav .perfil img {
 
     border-radius: 50%;
 }
-
-
-/* MENU */
-
 .menu {
     position: relative;
 
     margin-left: auto;
 }
-
-
-/* BOTÃO ☰ */
-
 .menu-botao {
     background: none;
 
@@ -72,17 +61,11 @@ nav .perfil img {
 
     padding: 0 5px;
 }
-
-
-/* CAIXINHA DO MENU */
-
 .menu-conteudo {
     display: none;
 
     position: absolute;
-
     right: 0;
-
     top: 35px;
 
     width: 130px;
@@ -117,4 +100,25 @@ nav .perfil img {
 }
 .menu:hover .menu-conteudo {
     display: block;
+}
+.menu-botao {
+    background: none;
+    border: none;
+
+    color: white;
+
+    cursor: pointer;
+
+    padding: 5px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-botao img {
+    width: 25px;
+    height: 25px;
+
+    object-fit: contain;
 }

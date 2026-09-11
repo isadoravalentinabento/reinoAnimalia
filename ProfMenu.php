@@ -6,13 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 
-    <link rel="stylesheet" href="css/header01.css?v=3">
+    <link rel="stylesheet" href="css/header01.css?v=4">
 </head>
 
 <body>
 
     <nav>
-
         
         <a href="ProfInicio.php">Minhas Turmas</a>
 
@@ -21,7 +20,7 @@
 
         <div class="menu">
 
-            <button class="menu-botao">☰</button>
+            <button class="menu-botao"><img src="img/icons/menu (2).png" alt="icons"></button>
 
             <div class="menu-conteudo">
                 <a href="Perfil.php">Perfil</a>

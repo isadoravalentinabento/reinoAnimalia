@@ -40,7 +40,6 @@ $registro = $comando->fetchAll();
 </tr>
 </form>
 
-
 <?php
 
 if(isset($_POST['filtro']) && !empty($_POST['filtro'])){
