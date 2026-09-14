@@ -1,13 +1,76 @@
 body {
     margin: 0;
+
+    min-height: 100vh;
+
     background-image: url("../img/fundo 3d.png");
+
     background-position: center;
+
     background-size: cover;
+
     background-repeat: no-repeat;
+
     background-attachment: fixed;
-    overflow: hidden;
-}
-h1 {
-    color: aliceblue;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    text-align: center;
 }
 
+h1 {
+    color: aliceblue;
+
+    margin: 20px 0 10px;
+
+    font-size: 28px;
+}
+.sala {
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    margin-top: 80px;
+}
+
+
+/* IMAGEM DA ÁRVORE */
+
+.arvore {
+    max-width: 90%;
+
+    max-height: 65vh;
+
+    object-fit: contain;
+
+    border-radius: 15px;
+}
+a button {
+    width: 180px;
+
+    height: 40px;
+
+    border: none;
+
+    border-radius: 20px;
+
+    background-color: #7042d3;
+
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+a button:hover {
+    background-color: #8b63e3;
+
+    transform: scale(1.05);
+}
