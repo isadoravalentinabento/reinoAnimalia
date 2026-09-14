@@ -27,28 +27,47 @@ $usuario = $comando->fetch();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Perfil</title>
+    <link rel="stylesheet" href="css/perfil.css">
 </head>
 <body>
-    <div class="perfil" style="background: blue">
-        <h1>Perfil</h1>
 
-        <img src="img/icons/user (1).png" width="120">
+    <div class="animais">
 
-        <br><br>
+    <img src="img/icons/jellyfish (3).png" class="agua-viva agua3">
+    <img src="img/icons/jellyfish (3).png" class="agua-viva agua3">
+    <img src="img/icons/jellyfish (3).png" class="agua-viva agua3">
+    <img src="img/icons/jellyfish (3).png" class="agua-viva agua4">
+    <img src="img/icons/jellyfish (3).png" class="agua-viva agua5">
+    <img src="img/icons/jellyfish (3).png" class="agua-viva agua6">
+    <img src="img/icons/jellyfish (3).png" class="agua-viva agua7">
+    <img src="img/icons/jellyfish (3).png" class="agua-viva agua8">
+    <img src="img/icons/jellyfish (3).png" class="agua-viva agua9">
 
-        <label>Nome:</label>
-        <?= $usuario['nome']?>
+    
 
-        <br><br>
-
-        <label>E-mail:</label>
-        <?= $usuario['email']?> 
-
-
-        <br><br>
-        <a href="index.php">
-            <button>Deslogar</button>
-        </a>
     </div>
+
+    <div class="perfil">
+        <h1>Perfil</h1>
+    <img src="img/icons/user (1).png" class="foto-perfil">
+    <div class="informacoes">
+
+        <p>
+            <strong>Nome:</strong>
+            <?= $usuario['nome']?>
+        </p>
+
+        <p>
+            <strong>E-mail:</strong>
+            <?= $usuario['email']?>
+        </p>
+
+    </div>
+
+    <a href="index.php">
+        <button>Deslogar</button>
+    </a>
+
+</div>
 </body>
 </html>
