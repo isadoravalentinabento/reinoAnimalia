@@ -1,0 +1,76 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-image: url("../img/polvoFundo.png");
+    background-position: center;
+    background-size: 101%;
+    background-repeat: no-repeat;
+    background-color: #171b54;
+    font-family: Georgia, "Times New Roman", serif;
+}
+.pagina-turmas {
+    min-height: calc(100vh - 45px);
+    padding: 25px;
+}
+.turmas-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 80px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.turma-link {
+    text-decoration: none;
+    color: #222;
+}
+.turma-card {
+    min-height: 110px;
+    padding: 15px 25px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 25px;
+    box-sizing: border-box;
+    transition: 0.3s;
+}
+.turma-card:hover {
+    transform: scale(1.03);
+    background-color: white;
+}
+.turma-card h2 {
+    margin: 0 0 15px;
+    font-size: 25px;
+    font-weight: normal;
+}
+.turma-card p {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+.nenhuma-sala {
+    grid-column: 1 / -1;
+    text-align: center;
+    color: white;
+    margin-top: 300px;
+}
+.nenhuma-sala h2 {
+    font-size: 28px;
+    font-weight: normal;
+    margin-bottom: 25px;
+}
+.btn-criar-sala {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 180px;
+    height: 50px;
+    background-color: #7042d3;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 22px;
+    transition: 0.3s;
+}
+.btn-criar-sala:hover {
+    background-color: #8b63e3;
+    transform: scale(1.05);
+}

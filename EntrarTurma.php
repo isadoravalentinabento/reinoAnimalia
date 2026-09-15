@@ -56,6 +56,11 @@ if($registro){
            exit;
     }
 }else{
-    echo "codigo deu erro";
+    echo "<script>
+        alert('Senha incorreta!');
+        history.back();
+    </script>";
+    exit;
+
 }
 ?>

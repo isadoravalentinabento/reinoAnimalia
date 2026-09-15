@@ -47,6 +47,7 @@ $alunos = $comando ->fetchAll();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Participantes</title>
+    <link rel="stylesheet" href="css/Participantes.css">
 </head>
 <body>
 
@@ -61,17 +62,22 @@ $alunos = $comando ->fetchAll();
 <?php
     foreach($alunos as $aluno){
 
-    echo "<p>".$aluno['nome'];
+    echo "<div class='aluno'>";
+
+    echo "<img src='img/icons/user (1).png' alt='Usuário'>";
+
+    echo "<span>".$aluno['nome']."</span>";
 
     if($_SESSION['tipo_usuario'] == 1){
 
-        echo " <a href='ExpulsarAluno.php?id_aluno=".$aluno['id_usuario']."&id_turma=".$id_turma."'>
+        echo "<a class='expulsar'
+                href='ExpulsarAluno.php?id_aluno=".$aluno['id_usuario']."&id_turma=".$id_turma."'>
                 Expulsar
               </a>";
     }
 
-    echo "</p>";
-    }
+    echo "</div>";
+}
 ?>
 
 

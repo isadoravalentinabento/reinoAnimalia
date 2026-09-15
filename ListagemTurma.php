@@ -16,7 +16,7 @@ $registro = $comando->fetchAll();
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="css/Listagem.css">
+    <link rel="stylesheet" href="css/Listagem.css?v=2">
     <title>Listagem</title>
    
 </head>
@@ -36,6 +36,8 @@ $registro = $comando->fetchAll();
      <input type="text" id="pesquisa" name="filtro">
      <button type="submit">Pesquisar</button>
     </th>  
+
+    <th></th>
 
 </tr>
 </form>

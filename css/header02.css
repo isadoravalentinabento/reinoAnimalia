@@ -1,124 +1,64 @@
-html, body {
-    margin: 0;
-    padding: 0;
-}
-nav {
-    height: 45px;
-
-    background-color: rgb(242, 242, 247);
-
+.menu-turma {
     display: flex;
+
+    justify-content: center;
+
     align-items: center;
 
-    padding: 0 10px;
+    gap: 25px;
+
+    padding: 12px 0;
+
+    background-color: #d9d9d9;
+}
+
+
+/* BOTÕES */
+
+.menu-turma a {
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 125px;
+
+    height: 35px;
 
     box-sizing: border-box;
-}
-nav > a {
-    color: rgb(31, 1, 1);
 
-    text-decoration: none;
-
-    font-family: Georgia, "Times New Roman", serif;
-
-    font-size: 16px;
-
-    margin-right: 15px;
-}
-
-nav > a:hover {
-    color: #28a2c0;
-}
-
-nav .perfil {
-    display: flex;
-    align-items: center;
-
-    margin-right: 8px;
-}
-
-nav .perfil img {
-    width: 27px;
-    height: 27px;
-
-    border-radius: 50%;
-}
-.menu {
-    position: relative;
-
-    margin-left: auto;
-}
-.menu-botao {
-    background: none;
-
-    border: none;
-
-    color: white;
-
-    font-size: 23px;
-
-    cursor: pointer;
-
-    padding: 0 5px;
-}
-.menu-conteudo {
-    display: none;
-
-    position: absolute;
-    right: 0;
-    top: 35px;
-
-    width: 130px;
-
-    background-color: rgb(4, 4, 83);
+    border: 2px solid #040C35;
 
     border-radius: 5px;
 
-    padding: 5px 0;
+    background-color: #f5f5f5;
 
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
-
-    z-index: 10;
-}
-.menu-conteudo a {
-    display: block;
-
-    color: white;
+    color: #222;
 
     text-decoration: none;
 
-    font-family: Georgia, "Times New Roman", serif;
+    font-family: Arial, Helvetica, sans-serif;
 
     font-size: 16px;
 
-    padding: 8px 12px;
+    transition: 0.2s;
 }
-.menu-conteudo a:hover {
-    background-color: #232b69;
 
-    color: #afe5f3;
-}
-.menu:hover .menu-conteudo {
-    display: block;
-}
-.menu-botao {
-    background: none;
-    border: none;
+
+/* BOTÃO ATIVO */
+
+.menu-turma a:first-child {
+    background-color: #17275c;
 
     color: white;
-
-    cursor: pointer;
-
-    padding: 5px;
-    
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
-.menu-botao img {
-    width: 25px;
-    height: 25px;
 
-    object-fit: contain;
+/* AO PASSAR O MOUSE */
+
+.menu-turma a:hover {
+    background-color: #040C35;
+
+    color: white;
 }

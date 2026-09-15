@@ -1,17 +1,278 @@
-        
-        
-        #popup{
-            display: none;
-            position: fixed;
+body {
+       margin: 0;
+    min-height: 100vh;
 
-            top: 50%;
-            left: 50%;
+    background-image: url("../img/polvoFundo.png");
+    background-position: center;
+    background-size: cover;
+    background-size: 101%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 
-            transform: translate(-50%, -50%);
-            background: lightblue;
-            padding: 30px;
+    font-family: Georgia, "Times New Roman", serif;
+}
+table {
+    width: 80%;
 
-            border-radius: 10px;
-        }
+    max-width: 1000px;
 
-   
+    margin: 40px auto;
+
+    background-color: white;
+
+    border: none;
+
+    border-collapse: separate;
+    border-spacing: 0;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    color: #040C35;
+}
+
+
+/* CABEÇALHO */
+
+table th {
+    background-color: #040C35;
+
+    color: white;
+
+    padding: 15px;
+
+    font-size: 19px;
+
+    font-weight: normal;
+}
+
+
+/* CÉLULAS */
+
+table td {
+    padding: 15px;
+
+    font-size: 18px;
+
+    text-align: center;
+
+    border-bottom: 1px solid #d9dce3;
+}
+
+
+/* ÚLTIMA LINHA */
+
+table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* CAMPO DE PESQUISA */
+
+#pesquisa {
+    width: 220px;
+
+    height: 32px;
+
+    padding: 0 12px;
+
+    box-sizing: border-box;
+
+    border: 2px solid white;
+
+    border-radius: 8px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    outline: none;
+}
+
+
+/* BOTÃO PESQUISAR */
+
+table th button {
+    height: 32px;
+
+    margin-left: 8px;
+
+    padding: 0 15px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background-color: #7042d3;
+
+    color: white;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 15px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+table th button:hover {
+    background-color: #8b63e3;
+
+    transform: translateY(-2px);
+}
+
+
+/* BOTÃO ENTRAR */
+
+table td button {
+    width: 100px;
+
+    height: 35px;
+
+    border: 2px solid #040C35;
+
+    border-radius: 8px;
+
+    background-color: white;
+
+    color: #040C35;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+table td button:hover {
+    background-color: #040C35;
+
+    color: white;
+
+    transform: translateY(-2px);
+}
+
+
+/* POPUP */
+
+#popup {
+    display: none;
+
+    position: fixed;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 350px;
+
+    padding: 30px;
+
+    box-sizing: border-box;
+
+    background-color: #040C35;
+
+    border-radius: 18px;
+
+    color: white;
+
+    text-align: center;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
+
+    z-index: 1000;
+}
+
+
+/* TÍTULO DO POPUP */
+
+#popup h2 {
+    margin: 0 0 25px;
+
+    font-size: 25px;
+
+    font-weight: normal;
+}
+
+
+/* CAMPO DO CÓDIGO */
+
+#popup input[type="text"] {
+    width: 250px;
+
+    height: 40px;
+
+    padding: 0 12px;
+
+    box-sizing: border-box;
+
+    border: none;
+
+    border-radius: 8px;
+
+    outline: none;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 17px;
+
+    text-align: center;
+}
+
+
+/* BOTÕES DO POPUP */
+
+#popup button {
+    width: 110px;
+
+    height: 38px;
+
+    margin: 15px 5px 0;
+
+    border: none;
+
+    border-radius: 8px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+
+/* ENTRAR */
+
+#popup button[type="submit"] {
+    background-color: #7042d3;
+
+    color: white;
+}
+
+#popup button[type="submit"]:hover {
+    background-color: #8b63e3;
+
+    transform: translateY(-2px);
+}
+
+
+/* FECHAR */
+
+#popup button[type="button"] {
+    background-color: #d9dce3;
+
+    color: #040C35;
+}
+
+#popup button[type="button"]:hover {
+    background-color: #bfc3cc;
+
+    transform: translateY(-2px);
+}
