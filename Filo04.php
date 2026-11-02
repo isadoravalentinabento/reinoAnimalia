@@ -29,6 +29,32 @@ $turma = $comando->fetch();
     </script>
 </head>
 <body>
-    
+    <main class="area-filo">
+
+    <section class="conteudo-esquerda">
+            <h2 id="titulo-esquerda">Características</h2>
+
+            <p id="texto-esquerda"> Aqui estão as características do filo.</p>
+    </section>
+
+    <section class="modelo">
+         <model-viewer 
+         id="modelo-3d"
+         src="Modelos3d/minhocaAnelídeo.glb" 
+         camera-controls 
+         auto-rotate 
+         shadow-intensity="1">
+        </model-viewer>
+    </section>
+
+    <section class="conteudo-direita">
+            <h2 id="titulo-direita">Curiosidades</h2>
+            <p id="texto-direita">Curiosidades</p>
+    </section>
+
+    <div class="avancar-container">
+    <button class="btn-avancar" id="btn-avancar">Avançar</button>
+    </div>
+</main>
 </body>
 </html>

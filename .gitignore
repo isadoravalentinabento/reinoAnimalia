@@ -205,3 +205,6 @@ cython_debug/
 marimo/_static/
 marimo/_lsp/
 __marimo__/
+
+# Backup dos modelos 3D
+/Modelos3d (zip).zip

@@ -48,6 +48,7 @@ $turma = $comando->fetch();
 
         <section class="modelo">
             <model-viewer
+                id="modelo-3d"
                 src="3d/untitled.glb"
                 camera-controls
                 auto-rotate
@@ -78,6 +79,10 @@ $turma = $comando->fetch();
             </button>
 
         </div>
+
+    <div class="avancar-container">
+        <button class="btn-avancar" id="btn-avancar">Avançar</button>
+    </div>
 
     </main>
 
