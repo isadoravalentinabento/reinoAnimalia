@@ -62,13 +62,13 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
         </section>
 
         <section class="modelo" style="display: none;">
-            <model-viewer
+           <!--  <model-viewer
                 id="modelo-3d"
                 src="Modelos3d/Aranha.glb"
                 camera-controls
                 auto-rotate
                 shadow-intensity="1">
-            </model-viewer>
+            </model-viewer> -->
         </section>
 
         <section class="conteudo-direita" style="display: none;">
@@ -137,8 +137,8 @@ function carregarEtapa(e) {
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
         } else if (e === 4) {
-            modelo.src = "Modelos3d/.glb";
-            tituloEsquerda.textContent = "Características da ";
+            modelo.src = "Modelos3d/Lacraia.glb";
+            tituloEsquerda.textContent = "Características da Lacraia ";
             textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
@@ -181,13 +181,13 @@ function salvarProgressoNoBanco(novaEtapa) {
     };
 
     botaoAvancar.addEventListener("click", function () {
-        if (etapa < 3) {
+        if (etapa < 5) {
             etapa++;
             carregarEtapa(etapa);
             salvarProgressoNoBanco(etapa);
         } else {
             alert("Aqui futuramente iremos para o quiz!");
-            etapa = 4;
+            etapa = 6;
             salvarProgressoNoBanco(etapa);
         }
     });
