@@ -65,7 +65,7 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
         <section class="modelo" style="display: none;">
             <model-viewer
                 id="modelo-3d"
-                src="Modelos3d/Minhoca.glb"
+                src="Modelos3d/minhocaAnelídeo.glb"
                 camera-controls
                 auto-rotate
                 shadow-intensity="1">
