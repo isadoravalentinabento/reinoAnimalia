@@ -109,20 +109,20 @@ const textoDireita = document.getElementById("texto-direita");
 const botaoAvancar = document.getElementById("btn-avancar");
 const botaoVoltar = document.getElementById("btn-voltar");
 
-// Função para atualizar os elementos na tela de acordo com a etapa
+
 function carregarEtapa(e) {
     if (e === 0) {
         introducao.style.display = "block";
         conteudoEsquerda.style.display = "none";
         conteudoModelo.style.display = "none";
         conteudoDireita.style.display = "none";
-        botaoVoltar.style.display = "none"; // Esconde o voltar na introdução
+        botaoVoltar.style.display = "none"; 
     } else {
         introducao.style.display = "none";
         conteudoEsquerda.style.display = "block";
         conteudoModelo.style.display = "block";
         conteudoDireita.style.display = "block";
-        botaoVoltar.style.display = "block"; // Mostra o botão voltar nas etapas dos animais
+        botaoVoltar.style.display = "block"; 
 
         if (e === 1) {
             modelo.src = "Modelos3d/caracolMolusco.glb";
@@ -146,7 +146,6 @@ function carregarEtapa(e) {
     }
 }
 
-// Função para salvar o progresso no banco via AJAX
 function salvarProgressoNoBanco(novaEtapa) {
     let dadosForm = new FormData();
     dadosForm.append("id_aluno", idAluno);
