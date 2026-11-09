@@ -132,20 +132,20 @@ function carregarEtapa(e) {
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
         } else if (e === 3) {
-            modelo.src = "Modelos3d/.glb";
-            tituloEsquerda.textContent = "Características do";
+            modelo.src = "Modelos3d/aguaviva.glb";
+            tituloEsquerda.textContent = "Características da água viva";
             textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
         }else if (e === 4) {
-            modelo.src = "Modelos3d/.glb";
-            tituloEsquerda.textContent = "Características do";
+            modelo.src = "Modelos3d/hidra.glb";
+            tituloEsquerda.textContent = "Características da hidra";
             textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
         } else if (e === 5) {
-            modelo.src = "Modelos3d/.glb";
-            tituloEsquerda.textContent = "Características do";
+            modelo.src = "Modelos3d/CaravelaPortuguesa.glb";
+            tituloEsquerda.textContent = "Características da caravela";
             textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
