@@ -131,11 +131,23 @@ function carregarEtapa(e) {
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
         } else if (e === 3) {
-            modelo.src = "Modelos3d/Lula.glb";
-            tituloEsquerda.textContent = "Características da lula";
-            textoEsquerda.textContent = "Corpo alongado e concha interna (gládio). Oito braços e dois tentáculos mais longos. Locomoção por jato de água através do sifão. Alimentação predadora com bico resistente.";
+            modelo.src = "Modelos3d/PiolhoDeCobra.glb";
+            tituloEsquerda.textContent = "Características do Piolho de Cobra";
+            textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";
-            textoDireita.textContent = "Podem mudar de cor usando cromatóforos. Liberam tinta para se defender de predadores. Possuem 3 corações e sangue azulado devido à hemocianina.";
+            textoDireita.textContent = "";
+        } else if (e === 4) {
+            modelo.src = "Modelos3d/.glb";
+            tituloEsquerda.textContent = "Características da ";
+            textoEsquerda.textContent = "";
+            tituloDireita.textContent = "Curiosidades";
+            textoDireita.textContent = "";
+        }else if (e === 5) {
+            modelo.src = "Modelos3d/Abelha1.glb";
+            tituloEsquerda.textContent = "Características da Abelha";
+            textoEsquerda.textContent = "";
+            tituloDireita.textContent = "Curiosidades";
+            textoDireita.textContent = "";
         }
     }
 }
