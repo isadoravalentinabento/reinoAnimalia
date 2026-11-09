@@ -125,11 +125,11 @@ function carregarEtapa(e) {
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
         } else if (e === 2) {
-            modelo.src = "Modelos3d/Vieira.glb";
-            tituloEsquerda.textContent = "Características da Vieira";
-            textoEsquerda.textContent = "Concha com duas valvas: as vieiras possuem uma concha formada por duas partes articuladas. Alimentação por filtração: retiram partículas alimentares da água. Olhos na borda do manto para detectar mudanças de luz.";
+            modelo.src = "Modelos3d/Caranguejo.glb";
+            tituloEsquerda.textContent = "Características do Caranguejo";
+            textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";
-            textoDireita.textContent = "Conseguem nadar para escapar de predadores abrindo e fechando rapidamente suas valvas! Seus olhos possuem pequenos espelhos internos para direcionar a luz.";
+            textoDireita.textContent = "";
         } else if (e === 3) {
             modelo.src = "Modelos3d/Lula.glb";
             tituloEsquerda.textContent = "Características da lula";
