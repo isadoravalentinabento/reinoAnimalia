@@ -126,8 +126,8 @@ function carregarEtapa(e) {
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
         } else if (e === 2) {
-            modelo.src = "Modelos3d/.glb";
-            tituloEsquerda.textContent = "Características do";
+            modelo.src = "Modelos3d/Anemona.glb";
+            tituloEsquerda.textContent = "Características da anemona do Mar";
             textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
@@ -150,6 +150,8 @@ function carregarEtapa(e) {
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
         } 
+    }
+}
 
 function salvarProgressoNoBanco(novaEtapa) {
     let dadosForm = new FormData();
