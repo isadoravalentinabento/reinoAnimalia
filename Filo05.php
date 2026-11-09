@@ -126,18 +126,12 @@ function carregarEtapa(e) {
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
         } else if (e === 2) {
-            modelo.src = "Modelos3d/";
-            tituloEsquerda.textContent = "Características da ";
+            modelo.src = "Modelos3d/OuricoDoMar.glb";
+            tituloEsquerda.textContent = "Características do Ourico do Mar ";
             textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
-        } else if (e === 3) {
-            modelo.src = "Modelos3d/";
-            tituloEsquerda.textContent = "Características da lula";
-            textoEsquerda.textContent = "";
-            tituloDireita.textContent = "Curiosidades";
-            textoDireita.textContent = "";
-        }
+        } 
     }
 }
 
