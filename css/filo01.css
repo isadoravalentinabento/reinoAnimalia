@@ -105,3 +105,30 @@ model-viewer {
     color: #040C35;
     transform: scale(1.05);
 }
+
+.btn-voltar-topo {
+    position: fixed;
+    top: 80px;
+    left: 40px;
+    
+    background-color: transparent; /* Remove o fundo */
+    border: none;                  /* Remove a borda */
+    
+    padding: 0;                    /* Remove espaçamentos internos desnecessários */
+    cursor: pointer;
+    
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+/* Tamanho e ajuste da imagem/flecha dentro do botão */
+.btn-voltar-topo img {
+    width: 35px;     /* Defina aqui o tamanho ideal para a flecha (ex: 30px, 35px, 40px) */
+    height: auto;    /* Mantém a proporção original */
+    display: block;
+}
+
+/* Efeito leve ao passar o rato (zoom na flecha) */
+.btn-voltar-topo:hover {
+    transform: scale(1.15);
+}

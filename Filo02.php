@@ -35,13 +35,16 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filo 2 - Moluscos</title>
-    <link rel="stylesheet" href="css/filo01.css?v=3">
+    <link rel="stylesheet" href="css/filo01.css?v=5">
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
 <body>
-    <main class="area-filo">
+    <main class="area-filo  ">
 
-        <!-- Introdução -->
+        <button id="btn-voltar" class="btn-voltar-topo" style="display: none;">
+            <img src="img/icons/left.png" alt="Voltar">
+        </button>
+
         <section id="introducao-filo" class="introducao-filo">
             <h1>Conhecendo o Filo</h1>
             <h2>Filo dos Moluscos</h2>
@@ -59,13 +62,11 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
             </p>
         </section>
 
-        <!-- Conteúdo Esquerda -->
         <section class="conteudo-esquerda" style="display: none;">
             <h2 id="titulo-esquerda">Características</h2>
             <p id="texto-esquerda">Aqui estão as características do filo.</p>
         </section>
 
-        <!-- Modelo 3D -->
         <section class="modelo" style="display: none;">
             <model-viewer
                 id="modelo-3d"
@@ -76,16 +77,15 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
             </model-viewer>
         </section>
 
-        <!-- Conteúdo Direita -->
         <section class="conteudo-direita" style="display: none;">
             <h2 id="titulo-direita">Curiosidades</h2>
             <p id="texto-direita">Curiosidades do animal.</p>
         </section>
 
-        <!-- Botão Avançar -->
         <div class="avancar-container">
             <button class="btn-avancar" id="btn-avancar">Avançar</button>
         </div>
+
     </main>
 
 <script>
@@ -105,7 +105,9 @@ const tituloEsquerda = document.getElementById("titulo-esquerda");
 const textoEsquerda = document.getElementById("texto-esquerda");
 const tituloDireita = document.getElementById("titulo-direita");
 const textoDireita = document.getElementById("texto-direita");
-const botao = document.getElementById("btn-avancar");
+
+const botaoAvancar = document.getElementById("btn-avancar");
+const botaoVoltar = document.getElementById("btn-voltar");
 
 // Função para atualizar os elementos na tela de acordo com a etapa
 function carregarEtapa(e) {
@@ -114,11 +116,13 @@ function carregarEtapa(e) {
         conteudoEsquerda.style.display = "none";
         conteudoModelo.style.display = "none";
         conteudoDireita.style.display = "none";
+        botaoVoltar.style.display = "none"; // Esconde o voltar na introdução
     } else {
         introducao.style.display = "none";
         conteudoEsquerda.style.display = "block";
         conteudoModelo.style.display = "block";
         conteudoDireita.style.display = "block";
+        botaoVoltar.style.display = "block"; // Mostra o botão voltar nas etapas dos animais
 
         if (e === 1) {
             modelo.src = "Modelos3d/caracolMolusco.glb";
@@ -142,29 +146,13 @@ function carregarEtapa(e) {
     }
 }
 
-// Ao carregar a página, exibe a etapa salva do aluno
-window.onload = function() {
-    carregarEtapa(etapa);
-};
-
-// Ao clicar no botão avançar
-botao.addEventListener("click", function () {
-
-    if (etapa < 3) {
-        etapa++;
-        carregarEtapa(etapa);
-    } else {
-        alert("Aqui futuramente iremos para o quiz!");
-        etapa = 4;
-    }
-
-    // Salva a nova etapa no banco de dados via AJAX
-    // Envia a nova etapa para o PHP salvar no banco de dados via AJAX
+// Função para salvar o progresso no banco via AJAX
+function salvarProgressoNoBanco(novaEtapa) {
     let dadosForm = new FormData();
     dadosForm.append("id_aluno", idAluno);
     dadosForm.append("id_turma", idTurma);
     dadosForm.append("id_evolucao", idEvolucao);
-    dadosForm.append("etapa", etapa);
+    dadosForm.append("etapa", novaEtapa);
 
     fetch("salvar_progresso.php", {
         method: "POST",
@@ -173,15 +161,39 @@ botao.addEventListener("click", function () {
     .then(resposta => resposta.json())
     .then(resultado => {
         if (resultado.sucesso) {
-            console.log("Progresso salvo com sucesso no banco!");
+            console.log("Progresso atualizado no banco:", novaEtapa);
         } else {
-            console.error("O banco recusou:", resultado.erro);
-            alert("Erro ao salvar no banco: " + resultado.erro);
+            console.error("Erro ao salvar:", resultado.erro);
         }
     })
     .catch(erro => {
         console.error("Erro na requisição:", erro);
     });
+}
+
+    window.onload = function() {
+        carregarEtapa(etapa);
+    };
+
+    botaoAvancar.addEventListener("click", function () {
+        if (etapa < 3) {
+            etapa++;
+            carregarEtapa(etapa);
+            salvarProgressoNoBanco(etapa);
+        } else {
+            alert("Aqui futuramente iremos para o quiz!");
+            etapa = 4;
+            salvarProgressoNoBanco(etapa);
+        }
+    });
+
+
+    botaoVoltar.addEventListener("click", function () {
+        if (etapa > 0) {
+            etapa--;
+            carregarEtapa(etapa);
+            salvarProgressoNoBanco(etapa);  
+        }
 });
 </script>
 </body>
