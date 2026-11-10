@@ -65,13 +65,13 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
 
 
         <section class="modelo" style="display: none;">
-           <!--  <model-viewer
+           <model-viewer
                 id="modelo-3d"
                 src="Modelos3d/Aranha.glb"
                 camera-controls
                 auto-rotate
                 shadow-intensity="1">
-            </model-viewer> -->
+            </model-viewer> 
         </section>
 
 
@@ -149,7 +149,7 @@ function carregarEtapa(e) {
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
         }else if (e === 5) {
-            modelo.src = "Modelos3d/Abelha1.glb";
+            modelo.src = "Modelos3d/Abelha.glb";
             tituloEsquerda.textContent = "Características da Abelha";
             textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";

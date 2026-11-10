@@ -46,7 +46,7 @@ $turma = $comando->fetch();
 
         <a href="SalaArvore.php?id=<?=$id_turma?>">
 
-            <img src="img/arvore.png"
+            <img src="img/ArvoreFilogenetica.png"
                  alt="Árvore Filogenética"
                  width="500">
         </a>
