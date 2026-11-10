@@ -1,7 +1,10 @@
-
+document.addEventListener("DOMContentLoaded", function() {
     const imagem = document.getElementById("arvore");
 
+    if (!imagem) return;
+
     function redimensionarMapa() {
+        if (imagem.naturalWidth === 0 || imagem.width === 0) return;
 
         const larguraOriginal = imagem.naturalWidth;
         const alturaOriginal = imagem.naturalHeight;
@@ -15,7 +18,6 @@
         const areas = document.querySelectorAll("map area");
 
         areas.forEach(function(area) {
-
             if (!area.dataset.coordsOriginal) {
                 area.dataset.coordsOriginal = area.coords;
             }
@@ -25,23 +27,24 @@
                 .map(Number);
 
             const novasCoords = coordsOriginal.map(function(coord, index) {
-
                 if (index % 2 === 0) {
                     return Math.round(coord * proporcaoX);
                 } else {
                     return Math.round(coord * proporcaoY);
                 }
-
             });
 
             area.coords = novasCoords.join(",");
         });
     }
 
+   
     imagem.addEventListener("load", redimensionarMapa);
-
     window.addEventListener("resize", redimensionarMapa);
 
     if (imagem.complete) {
         redimensionarMapa();
+    } else {
+        setTimeout(redimensionarMapa, 100);
     }
+});

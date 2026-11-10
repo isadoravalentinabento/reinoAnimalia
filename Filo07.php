@@ -3,22 +3,23 @@ include "configinc.php";
 include "validar.php";
 include "MenuArvore.php";
 
+
 $id_turma = $_GET['id'];
-
 $conexao = new PDO(dsn, usuario, senha);
-
 $sql = "SELECT nome_turma
         FROM turma
         WHERE id_turma = :id_turma";
 
+
 $comando = $conexao->prepare($sql);
 $comando->bindValue(':id_turma', $id_turma);
 $comando->execute();
-
 $turma = $comando->fetch();
+
 
 $id_aluno = $_SESSION['id_usuario'] ?? 1;
 $id_evolucao = 2;
+
 
 $sqlProgresso = "SELECT etapa FROM progresso WHERE id_aluno = :id_aluno AND id_evolucao = :id_evolucao";
 $cmdProgresso = $conexao->prepare($sqlProgresso);
@@ -26,6 +27,7 @@ $cmdProgresso->bindValue(':id_aluno', $id_aluno);
 $cmdProgresso->bindValue(':id_evolucao', $id_evolucao);
 $cmdProgresso->execute();
 $dadosProgresso = $cmdProgresso->fetch(PDO::FETCH_ASSOC);
+
 
 $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
 ?>
@@ -40,21 +42,21 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
 </head>
 <body>
     <main class="area-filo  ">
-
         <button id="btn-voltar" class="btn-voltar-topo" style="display: none;">
             <img src="img/icons/left.png" alt="Voltar">
         </button>
 
+
         <section id="introducao-filo" class="introducao-filo">
             <h1>Conhecendo o Filo</h1>
             <h2>Filo dos Moluscos</h2>
-            <p> 
+            <p>
                 Características do filo Mollusca:
                 Corpo bilateralmente simétrico (assimetria bilateral em alguns); não-segmentados; frequentemente com cabeça definida.
-                Parede ventral do corpo especializada como um pé muscular, diversamente modificado, mais usado principalmente para locomoção. 
+                Parede ventral do corpo especializada como um pé muscular, diversamente modificado, mais usado principalmente para locomoção.
                 Parede dorsal do corpo forma um par de dobras chamadas manto, o qual delimita a cavidade do manto e dá origem às brânquias ou pulmões e secreta a concha.
-                Epitélio da superfície corporal geralmente ciliado e provido de glândulas de muco e terminações nervosas sensoriais. 
-                Celoma limitado principalmente à região ao redor do coração, e talvez ao lúmen das gônadas e parte dos rins. 
+                Epitélio da superfície corporal geralmente ciliado e provido de glândulas de muco e terminações nervosas sensoriais.
+                Celoma limitado principalmente à região ao redor do coração, e talvez ao lúmen das gônadas e parte dos rins.
                 Sistema digestivo complexo; órgão raspador (rádula) geralmente presente; ânus geralmente evacuando para dentro da cavidade do manto.
                 Sistema circulatório aberto constituído de coração, vasos e seios sanguíneos.
                 Troca gasosa através das brânquias, pulmão, manto ou superfície corporal.
@@ -70,7 +72,7 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
         <section class="modelo" style="display: none;">
             <model-viewer
                 id="modelo-3d"
-                src="Modelos3d/esponja.glb"
+                src="Modelos3d/caracolMolusco.glb"
                 camera-controls
                 auto-rotate
                 shadow-intensity="1">
@@ -86,6 +88,7 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
             <button class="btn-avancar" id="btn-avancar">Avançar</button>
         </div>
 
+
     </main>
 
 <script>
@@ -94,7 +97,6 @@ const idAluno = <?php echo (int)$id_aluno; ?>;
 const idTurma = <?php echo (int)$id_turma; ?>;
 const idEvolucao = <?php echo (int)$id_evolucao; ?>;
 
-// Elementos da tela
 const introducao = document.getElementById("introducao-filo");
 const modelo = document.getElementById("modelo-3d");
 const conteudoEsquerda = document.querySelector(".conteudo-esquerda");
@@ -115,21 +117,34 @@ function carregarEtapa(e) {
         conteudoEsquerda.style.display = "none";
         conteudoModelo.style.display = "none";
         conteudoDireita.style.display = "none";
-        botaoVoltar.style.display = "none"; 
+        botaoVoltar.style.display = "none";
     } else {
         introducao.style.display = "none";
         conteudoEsquerda.style.display = "block";
         conteudoModelo.style.display = "block";
         conteudoDireita.style.display = "block";
-        botaoVoltar.style.display = "block"; 
+        botaoVoltar.style.display = "block";
+
 
         if (e === 1) {
-            modelo.src = "Modelos3d/esponja.glb";
-            tituloEsquerda.textContent = "Características da esponja ";
-            textoEsquerda.textContent = "";
+            modelo.src = "Modelos3d/caracolMolusco.glb";
+            tituloEsquerda.textContent = "Características do caracol";
+            textoEsquerda.textContent = "Concha espiralada: a maioria dos caracóis apresenta uma concha externa espiralada, que protege o corpo mole. Cabeça com tentáculos: possuem uma cabeça bem definida, com tentáculos sensoriais. Locomoção por pé muscular: deslocam-se deslizando sobre uma superfície. Rádula para alimentação: utilizam uma estrutura com pequenos dentes para raspar o alimento.";
             tituloDireita.textContent = "Curiosidades";
-            textoDireita.textContent = "";
-        } 
+            textoDireita.textContent = "Podem se proteger dentro da concha quando se sentem ameaçados. Apresentam grande diversidade de habitats (terrestres, água doce e marinhos). São mais ativos em condições úmidas.";
+        } else if (e === 2) {
+            modelo.src = "Modelos3d/Vieira.glb";
+            tituloEsquerda.textContent = "Características da Vieira";
+            textoEsquerda.textContent = "Concha com duas valvas: as vieiras possuem uma concha formada por duas partes articuladas. Alimentação por filtração: retiram partículas alimentares da água. Olhos na borda do manto para detectar mudanças de luz.";
+            tituloDireita.textContent = "Curiosidades";
+            textoDireita.textContent = "Conseguem nadar para escapar de predadores abrindo e fechando rapidamente suas valvas! Seus olhos possuem pequenos espelhos internos para direcionar a luz.";
+        } else if (e === 3) {
+            modelo.src = "Modelos3d/Lula.glb";
+            tituloEsquerda.textContent = "Características da lula";
+            textoEsquerda.textContent = "Corpo alongado e concha interna (gládio). Oito braços e dois tentáculos mais longos. Locomoção por jato de água através do sifão. Alimentação predadora com bico resistente.";
+            tituloDireita.textContent = "Curiosidades";
+            textoDireita.textContent = "Podem mudar de cor usando cromatóforos. Liberam tinta para se defender de predadores. Possuem 3 corações e sangue azulado devido à hemocianina.";
+        }
     }
 }
 
@@ -162,18 +177,16 @@ function salvarProgressoNoBanco(novaEtapa) {
     };
 
     botaoAvancar.addEventListener("click", function () {
-        if (etapa < 2) {
+        if (etapa < 3) {
             etapa++;
             carregarEtapa(etapa);
             salvarProgressoNoBanco(etapa);
         } else {
             alert("Aqui futuramente iremos para o quiz!");
-            etapa = 3;
+            etapa = 4;
             salvarProgressoNoBanco(etapa);
         }
     });
-
-
     botaoVoltar.addEventListener("click", function () {
         if (etapa > 0) {
             etapa--;

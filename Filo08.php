@@ -4,21 +4,21 @@ include "validar.php";
 include "MenuArvore.php";
 
 $id_turma = $_GET['id'];
-
 $conexao = new PDO(dsn, usuario, senha);
-
 $sql = "SELECT nome_turma
         FROM turma
         WHERE id_turma = :id_turma";
 
+
 $comando = $conexao->prepare($sql);
 $comando->bindValue(':id_turma', $id_turma);
 $comando->execute();
-
 $turma = $comando->fetch();
+
 
 $id_aluno = $_SESSION['id_usuario'] ?? 1;
 $id_evolucao = 2;
+
 
 $sqlProgresso = "SELECT etapa FROM progresso WHERE id_aluno = :id_aluno AND id_evolucao = :id_evolucao";
 $cmdProgresso = $conexao->prepare($sqlProgresso);
@@ -26,6 +26,7 @@ $cmdProgresso->bindValue(':id_aluno', $id_aluno);
 $cmdProgresso->bindValue(':id_evolucao', $id_evolucao);
 $cmdProgresso->execute();
 $dadosProgresso = $cmdProgresso->fetch(PDO::FETCH_ASSOC);
+
 
 $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
 ?>
@@ -41,43 +42,55 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
 <body>
     <main class="area-filo  ">
 
+
         <button id="btn-voltar" class="btn-voltar-topo" style="display: none;">
             <img src="img/icons/left.png" alt="Voltar">
         </button>
 
+
         <section id="introducao-filo" class="introducao-filo">
             <h1>Conhecendo o Filo</h1>
             <h2>Filo dos Moluscos</h2>
-            <p> 
+            <p>
+                Características do filo equinodermos:
                 aaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaa
+                aaaaaaaaaaaaaaaaaaaa
             </p>
         </section>
+
 
         <section class="conteudo-esquerda" style="display: none;">
             <h2 id="titulo-esquerda">Características</h2>
             <p id="texto-esquerda">Aqui estão as características do filo.</p>
         </section>
 
+
         <section class="modelo" style="display: none;">
-           <model-viewer
+            <model-viewer
                 id="modelo-3d"
-                src="Modelos3d/planaria.glb"
+                src="Modelos3d/EstrelaDoMar.glb"
                 camera-controls
                 auto-rotate
                 shadow-intensity="1">
             </model-viewer>
         </section>
 
+
         <section class="conteudo-direita" style="display: none;">
             <h2 id="titulo-direita">Curiosidades</h2>
             <p id="texto-direita">Curiosidades do animal.</p>
         </section>
 
+
         <div class="avancar-container">
             <button class="btn-avancar" id="btn-avancar">Avançar</button>
         </div>
 
+
     </main>
+
 
 <script>
 let etapa = <?php echo (int)$etapaInicial; ?>;
@@ -85,7 +98,6 @@ const idAluno = <?php echo (int)$id_aluno; ?>;
 const idTurma = <?php echo (int)$id_turma; ?>;
 const idEvolucao = <?php echo (int)$id_evolucao; ?>;
 
-// Elementos da tela
 const introducao = document.getElementById("introducao-filo");
 const modelo = document.getElementById("modelo-3d");
 const conteudoEsquerda = document.querySelector(".conteudo-esquerda");
@@ -107,23 +119,24 @@ function carregarEtapa(e) {
         conteudoEsquerda.style.display = "none";
         conteudoModelo.style.display = "none";
         conteudoDireita.style.display = "none";
-        botaoVoltar.style.display = "none"; 
+        botaoVoltar.style.display = "none";
     } else {
         introducao.style.display = "none";
         conteudoEsquerda.style.display = "block";
         conteudoModelo.style.display = "block";
         conteudoDireita.style.display = "block";
-        botaoVoltar.style.display = "block"; 
+        botaoVoltar.style.display = "block";
+
 
         if (e === 1) {
-            modelo.src = "Modelos3d/planaria.glb";
-            tituloEsquerda.textContent = "Características da Planaria";
+            modelo.src = "Modelos3d/EstrelaDoMar.glb";
+            tituloEsquerda.textContent = "Características da Estrela do Mar";
             textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
         } else if (e === 2) {
-            modelo.src = "Modelos3d/Tenia.glb";
-            tituloEsquerda.textContent = "Características da Tenia";
+            modelo.src = "Modelos3d/OuricoDoMar.glb";
+            tituloEsquerda.textContent = "Características do Ourico do Mar ";
             textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
@@ -160,17 +173,16 @@ function salvarProgressoNoBanco(novaEtapa) {
     };
 
     botaoAvancar.addEventListener("click", function () {
-        if (etapa < 2) {
+        if (etapa < 3) {
             etapa++;
             carregarEtapa(etapa);
             salvarProgressoNoBanco(etapa);
         } else {
             alert("Aqui futuramente iremos para o quiz!");
-            etapa = 3;
+            etapa = 4;
             salvarProgressoNoBanco(etapa);
         }
     });
-
 
     botaoVoltar.addEventListener("click", function () {
         if (etapa > 0) {

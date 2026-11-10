@@ -3,10 +3,9 @@ include "configinc.php";
 include "validar.php";
 include "MenuArvore.php";
 
+
 $id_turma = $_GET['id'];
-
 $conexao = new PDO(dsn, usuario, senha);
-
 $sql = "SELECT nome_turma
         FROM turma
         WHERE id_turma = :id_turma";
@@ -14,7 +13,6 @@ $sql = "SELECT nome_turma
 $comando = $conexao->prepare($sql);
 $comando->bindValue(':id_turma', $id_turma);
 $comando->execute();
-
 $turma = $comando->fetch();
 
 $id_aluno = $_SESSION['id_usuario'] ?? 1;
@@ -26,6 +24,7 @@ $cmdProgresso->bindValue(':id_aluno', $id_aluno);
 $cmdProgresso->bindValue(':id_evolucao', $id_evolucao);
 $cmdProgresso->execute();
 $dadosProgresso = $cmdProgresso->fetch(PDO::FETCH_ASSOC);
+
 
 $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
 ?>
@@ -41,47 +40,54 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
 <body>
     <main class="area-filo  ">
 
+
         <button id="btn-voltar" class="btn-voltar-topo" style="display: none;">
             <img src="img/icons/left.png" alt="Voltar">
         </button>
 
+
         <section id="introducao-filo" class="introducao-filo">
             <h1>Conhecendo o Filo</h1>
-            <h2>Filo dos Moluscos</h2>
-            <p> 
-                Características do filo cnidária :
-                aaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaa
+            <h2>Filo dos Artrópodes</h2>
+            <p>
+                Características do filo Artrópodes:
+                aaaaaa
+                aaaaaaa
+                aaaaaaaa
             </p>
         </section>
+
 
         <section class="conteudo-esquerda" style="display: none;">
             <h2 id="titulo-esquerda">Características</h2>
             <p id="texto-esquerda">Aqui estão as características do filo.</p>
         </section>
 
+
         <section class="modelo" style="display: none;">
-            <model-viewer
+           <!--  <model-viewer
                 id="modelo-3d"
-                src="Modelos3d/Coral.glb"
+                src="Modelos3d/Aranha.glb"
                 camera-controls
                 auto-rotate
                 shadow-intensity="1">
-            </model-viewer>
+            </model-viewer> -->
         </section>
+
 
         <section class="conteudo-direita" style="display: none;">
             <h2 id="titulo-direita">Curiosidades</h2>
             <p id="texto-direita">Curiosidades do animal.</p>
         </section>
 
+
         <div class="avancar-container">
             <button class="btn-avancar" id="btn-avancar">Avançar</button>
         </div>
 
+
     </main>
+
 
 <script>
 let etapa = <?php echo (int)$etapaInicial; ?>;
@@ -89,7 +95,6 @@ const idAluno = <?php echo (int)$id_aluno; ?>;
 const idTurma = <?php echo (int)$id_turma; ?>;
 const idEvolucao = <?php echo (int)$id_evolucao; ?>;
 
-// Elementos da tela
 const introducao = document.getElementById("introducao-filo");
 const modelo = document.getElementById("modelo-3d");
 const conteudoEsquerda = document.querySelector(".conteudo-esquerda");
@@ -104,54 +109,55 @@ const textoDireita = document.getElementById("texto-direita");
 const botaoAvancar = document.getElementById("btn-avancar");
 const botaoVoltar = document.getElementById("btn-voltar");
 
-
 function carregarEtapa(e) {
     if (e === 0) {
         introducao.style.display = "block";
         conteudoEsquerda.style.display = "none";
         conteudoModelo.style.display = "none";
         conteudoDireita.style.display = "none";
-        botaoVoltar.style.display = "none"; 
+        botaoVoltar.style.display = "none";
     } else {
         introducao.style.display = "none";
         conteudoEsquerda.style.display = "block";
         conteudoModelo.style.display = "block";
         conteudoDireita.style.display = "block";
-        botaoVoltar.style.display = "block"; 
+        botaoVoltar.style.display = "block";
+
 
         if (e === 1) {
-            modelo.src = "Modelos3d/Coral.glb";
-            tituloEsquerda.textContent = "Características do Coral";
+            modelo.src = "Modelos3d/aranha.glb";
+            tituloEsquerda.textContent = "Características da Aranha";
             textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
         } else if (e === 2) {
-            modelo.src = "Modelos3d/Anemona.glb";
-            tituloEsquerda.textContent = "Características da anemona do Mar";
+            modelo.src = "Modelos3d/Caranguejo.glb";
+            tituloEsquerda.textContent = "Características do Caranguejo";
             textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
         } else if (e === 3) {
-            modelo.src = "Modelos3d/aguaviva.glb";
-            tituloEsquerda.textContent = "Características da água viva";
+            modelo.src = "Modelos3d/PiolhoDeCobra.glb";
+            tituloEsquerda.textContent = "Características do Piolho de Cobra";
             textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
-        }else if (e === 4) {
-            modelo.src = "Modelos3d/hidra.glb";
-            tituloEsquerda.textContent = "Características da hidra";
+        } else if (e === 4) {
+            modelo.src = "Modelos3d/Lacraia.glb";
+            tituloEsquerda.textContent = "Características da Lacraia ";
             textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
-        } else if (e === 5) {
-            modelo.src = "Modelos3d/CaravelaPortuguesa.glb";
-            tituloEsquerda.textContent = "Características da caravela";
+        }else if (e === 5) {
+            modelo.src = "Modelos3d/Abelha1.glb";
+            tituloEsquerda.textContent = "Características da Abelha";
             textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
-        } 
+        }
     }
 }
+
 
 function salvarProgressoNoBanco(novaEtapa) {
     let dadosForm = new FormData();
@@ -176,7 +182,6 @@ function salvarProgressoNoBanco(novaEtapa) {
         console.error("Erro na requisição:", erro);
     });
 }
-
     window.onload = function() {
         carregarEtapa(etapa);
     };
@@ -192,8 +197,6 @@ function salvarProgressoNoBanco(novaEtapa) {
             salvarProgressoNoBanco(etapa);
         }
     });
-
-
     botaoVoltar.addEventListener("click", function () {
         if (etapa > 0) {
             etapa--;

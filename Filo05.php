@@ -4,9 +4,7 @@ include "validar.php";
 include "MenuArvore.php";
 
 $id_turma = $_GET['id'];
-
 $conexao = new PDO(dsn, usuario, senha);
-
 $sql = "SELECT nome_turma
         FROM turma
         WHERE id_turma = :id_turma";
@@ -48,12 +46,12 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
         <section id="introducao-filo" class="introducao-filo">
             <h1>Conhecendo o Filo</h1>
             <h2>Filo dos Moluscos</h2>
-            <p> 
-                Características do filo equinodermos:
-                aaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaa
-                aaaaaaaaaaaaaaaaaaaa
+            <p>
+                Características do filo Anelídeos:
+                aaa
+                aaaaaaaaa
+                aaaaaaaaaaaaa
+                aaaaaaaaaaaaa
             </p>
         </section>
 
@@ -65,7 +63,7 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
         <section class="modelo" style="display: none;">
             <model-viewer
                 id="modelo-3d"
-                src="Modelos3d/EstrelaDoMar.glb"
+                src="Modelos3d/minhocaAnelídeo.glb"
                 camera-controls
                 auto-rotate
                 shadow-intensity="1">
@@ -83,23 +81,25 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
 
     </main>
 
+
 <script>
 let etapa = <?php echo (int)$etapaInicial; ?>;
 const idAluno = <?php echo (int)$id_aluno; ?>;
 const idTurma = <?php echo (int)$id_turma; ?>;
 const idEvolucao = <?php echo (int)$id_evolucao; ?>;
 
-// Elementos da tela
 const introducao = document.getElementById("introducao-filo");
 const modelo = document.getElementById("modelo-3d");
 const conteudoEsquerda = document.querySelector(".conteudo-esquerda");
 const conteudoModelo = document.querySelector(".modelo");
 const conteudoDireita = document.querySelector(".conteudo-direita");
 
+
 const tituloEsquerda = document.getElementById("titulo-esquerda");
 const textoEsquerda = document.getElementById("texto-esquerda");
 const tituloDireita = document.getElementById("titulo-direita");
 const textoDireita = document.getElementById("texto-direita");
+
 
 const botaoAvancar = document.getElementById("btn-avancar");
 const botaoVoltar = document.getElementById("btn-voltar");
@@ -111,29 +111,25 @@ function carregarEtapa(e) {
         conteudoEsquerda.style.display = "none";
         conteudoModelo.style.display = "none";
         conteudoDireita.style.display = "none";
-        botaoVoltar.style.display = "none"; 
+        botaoVoltar.style.display = "none";
     } else {
         introducao.style.display = "none";
         conteudoEsquerda.style.display = "block";
         conteudoModelo.style.display = "block";
         conteudoDireita.style.display = "block";
-        botaoVoltar.style.display = "block"; 
+        botaoVoltar.style.display = "block";
+
 
         if (e === 1) {
-            modelo.src = "Modelos3d/EstrelaDoMar.glb";
-            tituloEsquerda.textContent = "Características da Estrela do Mar";
+            modelo.src = "Modelos3d/Lombriga.glb";
+            tituloEsquerda.textContent = "Características da minhoca";
             textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
-        } else if (e === 2) {
-            modelo.src = "Modelos3d/OuricoDoMar.glb";
-            tituloEsquerda.textContent = "Características do Ourico do Mar ";
-            textoEsquerda.textContent = "";
-            tituloDireita.textContent = "Curiosidades";
-            textoDireita.textContent = "";
-        } 
+        }
     }
 }
+
 
 function salvarProgressoNoBanco(novaEtapa) {
     let dadosForm = new FormData();
@@ -158,23 +154,21 @@ function salvarProgressoNoBanco(novaEtapa) {
         console.error("Erro na requisição:", erro);
     });
 }
-
     window.onload = function() {
         carregarEtapa(etapa);
     };
 
     botaoAvancar.addEventListener("click", function () {
-        if (etapa < 3) {
+        if (etapa < 1) {
             etapa++;
             carregarEtapa(etapa);
             salvarProgressoNoBanco(etapa);
         } else {
             alert("Aqui futuramente iremos para o quiz!");
-            etapa = 4;
+            etapa = 2;
             salvarProgressoNoBanco(etapa);
         }
     });
-
 
     botaoVoltar.addEventListener("click", function () {
         if (etapa > 0) {
