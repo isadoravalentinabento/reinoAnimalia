@@ -33,42 +33,51 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Filo 2 - Moluscos</title>
-    <link rel="stylesheet" href="css/filo01.css?v=5">
+    <title>Filo - Poríferos</title>
+    <link rel="stylesheet" href="css/filo01.css?v=9">
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
 <body>
-    <main class="area-filo  ">
-
+    <main id="main-container" class="area-intro"> <!-- Começa com a classe de introdução -->
 
         <button id="btn-voltar" class="btn-voltar-topo" style="display: none;">
             <img src="img/icons/left.png" alt="Voltar">
         </button>
 
-
-        <section id="introducao-filo" class="introducao-filo">
-            <h1>Conhecendo o Filo</h1>
-            <h2>Filo dos Moluscos</h2>
-            <p>
-                Características do filo Mollusca:
-                Corpo bilateralmente simétrico (assimetria bilateral em alguns); não-segmentados; frequentemente com cabeça definida.
-                Parede ventral do corpo especializada como um pé muscular, diversamente modificado, mais usado principalmente para locomoção.
-                Parede dorsal do corpo forma um par de dobras chamadas manto, o qual delimita a cavidade do manto e dá origem às brânquias ou pulmões e secreta a concha.
-                Epitélio da superfície corporal geralmente ciliado e provido de glândulas de muco e terminações nervosas sensoriais.
-                Celoma limitado principalmente à região ao redor do coração, e talvez ao lúmen das gônadas e parte dos rins.
-                Sistema digestivo complexo; órgão raspador (rádula) geralmente presente; ânus geralmente evacuando para dentro da cavidade do manto.
-                Sistema circulatório aberto constituído de coração, vasos e seios sanguíneos.
-                Troca gasosa através das brânquias, pulmão, manto ou superfície corporal.
-                Órgãos sensoriais do tato, olfato, paladar, equilíbrio e visão.
-            </p>
+        <div class="titulos">
+            <h1>Conhecendo o Filo dos poríferos</h1>
+            <h2>Características do filo Porifera</h2>
+        </div>
+        
+        <!-- Etapa 0 -->
+        <section id="intro-etapa-0" class="introducao-filo">
+            <div class="bloco-introducao">
+                <ul>
+                    <li><strong>Multicelulares:</strong> são animais formados por várias células, que desempenham funções diferentes, como a captura de alimentos, o transporte de nutrientes e a sustentação do corpo.</li>
+                    <li><strong>Habitat aquático:</strong> vivem exclusivamente em ambientes aquáticos, tanto marinhos quanto de água doce. A maioria das espécies é marinha, e elas podem ser encontradas fixadas em rochas, corais e outros substratos submersos.</li>
+                    <li><strong>Corpo com poros:</strong> apresentam numerosos poros na superfície corporal, pelos quais a água entra. Ela circula por canais internos e sai, em muitas espécies, por uma abertura maior chamada ósculo.</li>
+                    <li><strong>Simetria corporal:</strong> a maioria das esponjas é assimétrica, ou seja, não apresenta um padrão de divisão do corpo em partes equivalentes. Algumas espécies, entretanto, apresentam simetria radial.</li>
+                </ul>
+            </div>
         </section>
 
+        <!-- Etapa 1 -->
+        <section id="intro-etapa-1" class="introducao-filo" style="display: none;">
+            <div class="bloco-introducao">
+                <ul>
+                    <li><strong>Organização corporal simples:</strong> não possuem tecidos verdadeiros, órgãos ou sistemas especializados. Apesar disso, apresentam diferentes tipos de células, que realizam funções essenciais à sobrevivência do animal.</li>
+                    <li><strong>Células da superfície:</strong> a camada externa do corpo é formada principalmente por células achatadas chamadas pinacócitos, que constituem a pinacoderme.</li>
+                    <li><strong>Alimentação por filtração:</strong> são animais filtradores, pois retiram da água partículas orgânicas e organismos microscópicos que servem de alimento.</li>
+                    <li><strong>Digestão intracelular:</strong> como não possuem sistema digestório, a digestão ocorre no interior das células. Os coanócitos capturam partículas alimentares e os amebócitos distribuem os nutrientes.</li>
+                </ul>
+            </div>
+        </section>
 
+        <!-- Etapa 2 (Modelo 3D) -->
         <section class="conteudo-esquerda" style="display: none;">
             <h2 id="titulo-esquerda">Características</h2>
             <p id="texto-esquerda">Aqui estão as características do filo.</p>
         </section>
-
 
         <section class="modelo" style="display: none;">
             <model-viewer
@@ -80,63 +89,72 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
             </model-viewer>
         </section>
 
-
         <section class="conteudo-direita" style="display: none;">
             <h2 id="titulo-direita">Curiosidades</h2>
             <p id="texto-direita">Curiosidades do animal.</p>
         </section>
-
 
         <div class="avancar-container">
             <button class="btn-avancar" id="btn-avancar">Avançar</button>
         </div>
 
     </main>
+
 <script>
 let etapa = <?php echo (int)$etapaInicial; ?>;
 const idAluno = <?php echo (int)$id_aluno; ?>;
 const idTurma = <?php echo (int)$id_turma; ?>;
 const idEvolucao = <?php echo (int)$id_evolucao; ?>;
 
-const introducao = document.getElementById("introducao-filo");
+// Elementos da tela
+const intro0 = document.getElementById("intro-etapa-0");
+const intro1 = document.getElementById("intro-etapa-1");
 const modelo = document.getElementById("modelo-3d");
 const conteudoEsquerda = document.querySelector(".conteudo-esquerda");
 const conteudoModelo = document.querySelector(".modelo");
 const conteudoDireita = document.querySelector(".conteudo-direita");
-
 
 const tituloEsquerda = document.getElementById("titulo-esquerda");
 const textoEsquerda = document.getElementById("texto-esquerda");
 const tituloDireita = document.getElementById("titulo-direita");
 const textoDireita = document.getElementById("texto-direita");
 
-
 const botaoAvancar = document.getElementById("btn-avancar");
 const botaoVoltar = document.getElementById("btn-voltar");
 
+const mainContainer = document.getElementById("main-container");
+const titulosContainer = document.querySelector(".titulos");
 
 function carregarEtapa(e) {
+    // Esconde tudo por padrão
+    intro0.style.display = "none";
+    intro1.style.display = "none";
+    conteudoEsquerda.style.display = "none";
+    conteudoModelo.style.display = "none";
+    conteudoDireita.style.display = "none";
+    botaoVoltar.style.display = "block";
+
     if (e === 0) {
-        introducao.style.display = "block";
-        conteudoEsquerda.style.display = "none";
-        conteudoModelo.style.display = "none";
-        conteudoDireita.style.display = "none";
-        botaoVoltar.style.display = "none";
-    } else {
-        introducao.style.display = "none";
+        mainContainer.className = "area-intro";
+        intro0.style.display = "block";
+        titulosContainer.style.display = "block"; // MOSTRA os títulos apenas na etapa 0
+        botaoVoltar.style.display = "none";       // Esconde o voltar na primeira tela
+    } else if (e === 1) {
+        mainContainer.className = "area-intro";
+        intro1.style.display = "block";
+        titulosContainer.style.display = "none"; // ESCONDE os títulos a partir da etapa 1
+    } else if (e === 2) {
+        mainContainer.className = "area-3d";
         conteudoEsquerda.style.display = "block";
         conteudoModelo.style.display = "block";
         conteudoDireita.style.display = "block";
-        botaoVoltar.style.display = "block";
+        titulosContainer.style.display = "none"; // ESCONDE os títulos na tela 3D
 
-
-        if (e === 1) {
-            modelo.src = "Modelos3d/esponja.glb";
-            tituloEsquerda.textContent = "Características da esponja ";
-            textoEsquerda.textContent = "";
-            tituloDireita.textContent = "Curiosidades";
-            textoDireita.textContent = "";
-        }
+        modelo.src = "Modelos3d/esponja.glb";
+        tituloEsquerda.textContent = "Características da esponja";
+        textoEsquerda.textContent = "As esponjas possuem uma estrutura porosa que permite a entrada contínua de água para filtração de nutrientes.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Elas não possuem sistema nervoso, muscular ou circulatório, mas suas células conseguem se recompor mesmo se o corpo for totalmente separado!";
     }
 }
 
@@ -163,28 +181,31 @@ function salvarProgressoNoBanco(novaEtapa) {
         console.error("Erro na requisição:", erro);
     });
 }
-    window.onload = function() {
+
+window.onload = function() {
+    carregarEtapa(etapa);
+};
+
+// Botão Avançar
+botaoAvancar.addEventListener("click", function () {
+    if (etapa < 2) {
+        etapa++;
         carregarEtapa(etapa);
-    };
+        salvarProgressoNoBanco(etapa);
+    } else {
+        alert("Aqui futuramente iremos para o quiz!");
+        etapa = 3;
+        salvarProgressoNoBanco(etapa);
+    }
+});
 
-    botaoAvancar.addEventListener("click", function () {
-        if (etapa < 2) {
-            etapa++;
-            carregarEtapa(etapa);
-            salvarProgressoNoBanco(etapa);
-        } else {
-            alert("Aqui futuramente iremos para o quiz!");
-            etapa = 3;
-            salvarProgressoNoBanco(etapa);
-        }
-    });
-
-    botaoVoltar.addEventListener("click", function () {
-        if (etapa > 0) {
-            etapa--;
-            carregarEtapa(etapa);
-            salvarProgressoNoBanco(etapa);  
-        }
+// Botão Voltar
+botaoVoltar.addEventListener("click", function () {
+    if (etapa > 0) {
+        etapa--;
+        carregarEtapa(etapa);
+        salvarProgressoNoBanco(etapa);  
+    }
 });
 </script>
 </body>

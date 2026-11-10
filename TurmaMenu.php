@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -11,22 +9,10 @@
 </head>
 
 <body>
-
     <nav class="menu-turma">
-
-        <a href="Turma.php?id=<?=$id_turma?>">
-            Sala
-        </a>
-
-        <a href="Participantes.php?id=<?=$id_turma?>">
-            Participantes
-        </a>
-
-        <a href="#">
-            Dados
-        </a>
-
+        <a href="Turma.php?id=<?=$id_turma?>">Sala</a>
+        <a href="Participantes.php?id=<?=$id_turma?>">Participantes</a>
+        <a href="#">Dados</a>
     </nav>
-
 </body>
 </html>

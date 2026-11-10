@@ -1,134 +1,183 @@
 body {
     margin: 0;
-
+    height: 100vh;
     background-image: url("../img/fundo 3d.png");
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-
-    overflow: hidden;
+    overflow: hidden; 
+    font-family: Georgia, "Times New Roman", serif;
 }
-
-.area-filo {
+.titulos {
     width: 100%;
-    min-height: 100vh;
-
-    display: grid;
-    grid-template-columns: 1fr 500px 1fr;
-
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.titulos h1 {
+    color: #afe5f3;
+    font-size: 30px;
+    margin: 0 0 5px 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+.titulos h2 {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: normal;
+    opacity: 0.85;
+    margin: 0;
+}
+.area-intro {
+    width: 100%;
+    height: calc(100vh - 80px);
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 20px;
-
-    padding: 40px;
+    justify-content: flex-start;
+    padding: 10px 40px;
     box-sizing: border-box;
+    position: relative;
 }
-
-model-viewer {
-    display: block;
-
-    width: 500px;
-    height: 500px;
-
-    margin: 0 auto;
-}
-
-.conteudo-esquerda,
-.conteudo-direita {
+.introducao-filo {
     width: 100%;
-    max-width: 350px;
-
-    background-color: rgba(4, 12, 53, 0.75);
-
-    padding: 25px;
-
-    border-radius: 25px;
-
-    color: white;
-
+    max-width: 1200px;
+    margin: 5px auto;
+    padding: 0 10px;
     box-sizing: border-box;
-}
-
-.conteudo-esquerda h2,
-.conteudo-direita h2 {
-    margin-top: 0;
-
-    font-size: 28px;
-}
-
-.conteudo-esquerda p,
-.conteudo-direita p {
-    font-size: 18px;
-
-    line-height: 1.5;
-}
-.conteudo-esquerda {
-    justify-self: end;
-}
-
-.conteudo-direita {
-    justify-self: start;
-}
-.avancar-container {
-    position: fixed;
-
-    bottom: 30px;
-    left: 500px;
-
-    width: 100%;
-
     display: flex;
     justify-content: center;
-
-    z-index: 10;
+}
+.bloco-introducao {
+    width: 100%;
+    background-color: rgba(4, 12, 53, 0.9);
+    padding: 25px 40px;
+    border-radius: 25px;
+    border: 2px solid rgba(175, 229, 243, 0.3);
+    color: white;
+    box-sizing: border-box;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    max-height: 62vh;
+    overflow-y: auto;  
+}
+.bloco-introducao::-webkit-scrollbar {
+    width: 8px;
+}
+.bloco-introducao::-webkit-scrollbar-track {
+    background: rgba(4, 12, 53, 0.5);
+    border-radius: 10px;
+}
+.bloco-introducao::-webkit-scrollbar-thumb {
+    background: #afe5f3;
+    border-radius: 10px;
+}
+.bloco-introducao ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.bloco-introducao li {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    border-left: 4px solid #afe5f3; 
+    text-align: left; 
+}
+.bloco-introducao li strong {
+    color: #afe5f3;
+}
+.area-3d {
+    width: 100% !important;
+    height: calc(100vh - 100px) !important;
+    display: grid !important;
+    grid-template-columns: 350px 1fr 350px !important; 
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 30px !important;
+    padding: 10px 50px !important;
+    box-sizing: border-box !important;
+}
+.area-3d .conteudo-esquerda {
+    grid-column: 1 !important;
+    width: 100% !important;
+    background-color: rgba(4, 12, 53, 0.9);
+    padding: 20px;
+    border-radius: 25px;
+    border: 2px solid rgba(175, 229, 243, 0.3);
+    color: white;
+    box-sizing: border-box;
+    text-align: left;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+.area-3d .modelo {
+    grid-column: 2 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+.area-3d model-viewer {
+    display: block !important;
+    width: 420px !important;
+    height: 420px !important;
+    margin: 0 auto !important;
+}
+.area-3d .conteudo-direita {
+    grid-column: 3 !important;
+    width: 100% !important;
+    background-color: rgba(4, 12, 53, 0.9);
+    padding: 20px;
+    border-radius: 25px;
+    border: 2px solid rgba(175, 229, 243, 0.3);
+    color: white;
+    box-sizing: border-box;
+    text-align: left;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+.avancar-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+    margin-bottom: 10px;
 }
 .btn-avancar {
     width: 180px;
-    height: 50px;
-
-    background-color: #0c1b6871;
+    height: 45px;
+    padding: 10px;
+    margin-left: 2000px;
+    background-color: #0c1b68bc;
     color: white;
-
-    border: none;
+    border: 2px solid rgba(175, 229, 243, 0.4);
     border-radius: 30px;
-
-    font-size: 20px;
+    font-size: 18px;
     font-weight: bold;
-
     cursor: pointer;
-
     transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
-
 .btn-avancar:hover {
     background-color: #afe5f3;
     color: #040C35;
     transform: scale(1.05);
 }
-
 .btn-voltar-topo {
     position: fixed;
-    top: 80px;
-    left: 40px;
-    
-    background-color: transparent; /* Remove o fundo */
-    border: none;                  /* Remove a borda */
-    
-    padding: 0;                    /* Remove espaçamentos internos desnecessários */
+    top: 25px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
     cursor: pointer;
-    
     z-index: 1000;
     transition: transform 0.3s ease;
 }
-
-/* Tamanho e ajuste da imagem/flecha dentro do botão */
 .btn-voltar-topo img {
-    width: 35px;     /* Defina aqui o tamanho ideal para a flecha (ex: 30px, 35px, 40px) */
-    height: auto;    /* Mantém a proporção original */
+    padding-top: 50px;
+    width: 40px; 
+    height: auto;
     display: block;
 }
-
-/* Efeito leve ao passar o rato (zoom na flecha) */
 .btn-voltar-topo:hover {
     transform: scale(1.15);
 }

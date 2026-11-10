@@ -28,8 +28,6 @@ $turma = $comando->fetch();
 <body>
    <div class="sala">
 
-
-    
 <img src="img/FundoArvore.png" usemap="#image-map" class="arvore" id="arvore" alt="Árvore Filogenética">
 
 <map name="image-map">

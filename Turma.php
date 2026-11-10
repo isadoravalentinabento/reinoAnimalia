@@ -30,22 +30,15 @@ $turma = $comando->fetch();
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>Turma</title>
-
     <link rel="stylesheet" href="css/Turma.css">
-
 </head>
-
 <body>
     <div class="imagem-arvore">
 
         <a href="SalaArvore.php?id=<?=$id_turma?>">
-
             <img src="img/ArvoreFilogenetica.png"
                  alt="Árvore Filogenética"
                  width="500">
@@ -72,49 +65,29 @@ $turma = $comando->fetch();
 
     <?php } ?>
 
-
-    <!-- Botões -->
-
     <div class="botoes-turma">
-
     <?php
-
     if($_SESSION['tipo_usuario'] == 0){
-
     ?>
 
         <a href="SairTurma.php?id_turma=<?=$id_turma?>">
-
             <button class="btn-sair">
                 Sair da turma
             </button>
-
         </a>
-
     <?php
-
     }else{
-
     ?>
-
         <a href="ExcluirTurma.php?id_turma=<?=$id_turma?>"
            onclick="return confirm('Tem certeza que deseja excluir esta turma?');">
-
             <button class="btn-excluir">
                 Excluir turma
             </button>
-
         </a>
-
     <?php
-
     }
-
     ?>
-
     </div>
-
-
 <script>
 let mostrando = false;
 function mostrarInformacoes(){
@@ -130,7 +103,5 @@ function mostrarInformacoes(){
 }
 
 </script>
-
 </body>
-
 </html>
