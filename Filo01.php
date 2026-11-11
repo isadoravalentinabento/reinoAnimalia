@@ -38,7 +38,7 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
 <body>
-    <main id="main-container" class="area-intro"> <!-- Começa com a classe de introdução -->
+    <main id="main-container" class="area-intro">
 
         <button id="btn-voltar" class="btn-voltar-topo" style="display: none;">
             <img src="img/icons/left.png" alt="Voltar">
@@ -49,7 +49,6 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
             <h2>Características do filo Porifera</h2>
         </div>
         
-        <!-- Etapa 0 -->
         <section id="intro-etapa-0" class="introducao-filo">
             <div class="bloco-introducao">
                 <ul>
@@ -73,7 +72,6 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
             </div>
         </section>
 
-        <!-- Etapa 2 (Modelo 3D) -->
         <section class="conteudo-esquerda" style="display: none;">
             <h2 id="titulo-esquerda">Características</h2>
             <p id="texto-esquerda">Aqui estão as características do filo.</p>
@@ -101,12 +99,13 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
     </main>
 
 <script>
+
 let etapa = <?php echo (int)$etapaInicial; ?>;
 const idAluno = <?php echo (int)$id_aluno; ?>;
 const idTurma = <?php echo (int)$id_turma; ?>;
 const idEvolucao = <?php echo (int)$id_evolucao; ?>;
 
-// Elementos da tela
+
 const intro0 = document.getElementById("intro-etapa-0");
 const intro1 = document.getElementById("intro-etapa-1");
 const modelo = document.getElementById("modelo-3d");
@@ -126,7 +125,7 @@ const mainContainer = document.getElementById("main-container");
 const titulosContainer = document.querySelector(".titulos");
 
 function carregarEtapa(e) {
-    // Esconde tudo por padrão
+    
     intro0.style.display = "none";
     intro1.style.display = "none";
     conteudoEsquerda.style.display = "none";
@@ -137,18 +136,18 @@ function carregarEtapa(e) {
     if (e === 0) {
         mainContainer.className = "area-intro";
         intro0.style.display = "block";
-        titulosContainer.style.display = "block"; // MOSTRA os títulos apenas na etapa 0
-        botaoVoltar.style.display = "none";       // Esconde o voltar na primeira tela
+        titulosContainer.style.display = "block"; 
+        botaoVoltar.style.display = "none";       
     } else if (e === 1) {
         mainContainer.className = "area-intro";
         intro1.style.display = "block";
-        titulosContainer.style.display = "none"; // ESCONDE os títulos a partir da etapa 1
+        titulosContainer.style.display = "none"; 
     } else if (e === 2) {
         mainContainer.className = "area-3d";
         conteudoEsquerda.style.display = "block";
         conteudoModelo.style.display = "block";
         conteudoDireita.style.display = "block";
-        titulosContainer.style.display = "none"; // ESCONDE os títulos na tela 3D
+        titulosContainer.style.display = "none"; 
 
         modelo.src = "Modelos3d/esponja.glb";
         tituloEsquerda.textContent = "Características da esponja";
@@ -186,7 +185,6 @@ window.onload = function() {
     carregarEtapa(etapa);
 };
 
-// Botão Avançar
 botaoAvancar.addEventListener("click", function () {
     if (etapa < 2) {
         etapa++;
@@ -199,7 +197,6 @@ botaoAvancar.addEventListener("click", function () {
     }
 });
 
-// Botão Voltar
 botaoVoltar.addEventListener("click", function () {
     if (etapa > 0) {
         etapa--;

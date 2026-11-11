@@ -30,12 +30,12 @@ body {
 }
 .area-intro {
     width: 100%;
-    height: calc(100vh - 80px);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start;
-    padding: 10px 40px;
+    justify-content: center; 
+    padding: 10px 20px;
     box-sizing: border-box;
     position: relative;
 }
@@ -50,6 +50,7 @@ body {
 }
 .bloco-introducao {
     width: 100%;
+    max-width: 1200px;
     background-color: rgba(4, 12, 53, 0.9);
     padding: 25px 40px;
     border-radius: 25px;
@@ -57,7 +58,7 @@ body {
     color: white;
     box-sizing: border-box;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-    max-height: 62vh;
+    max-height: 52vh; 
     overflow-y: auto;  
 }
 .bloco-introducao::-webkit-scrollbar {
@@ -139,13 +140,12 @@ body {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 15px;
-    margin-bottom: 10px;
+    margin-top: 20px; 
+    position: static !important; 
 }
 .btn-avancar {
     width: 180px;
     height: 45px;
-    padding: 10px;
     margin-left: 2000px;
     background-color: #0c1b68bc;
     color: white;
@@ -157,6 +157,7 @@ body {
     transition: 0.3s;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
+
 .btn-avancar:hover {
     background-color: #afe5f3;
     color: #040C35;
@@ -164,20 +165,23 @@ body {
 }
 .btn-voltar-topo {
     position: fixed;
-    top: 25px;
+    top: 90px;
+    left: 40px;
     background-color: transparent;
     border: none;
     padding: 0;
     cursor: pointer;
-    z-index: 1000;
+    z-index: 9999; 
     transition: transform 0.3s ease;
 }
+
 .btn-voltar-topo img {
-    padding-top: 50px;
-    width: 40px; 
+    width: 50px;
     height: auto;
     display: block;
+    pointer-events: none; 
 }
+
 .btn-voltar-topo:hover {
     transform: scale(1.15);
 }
