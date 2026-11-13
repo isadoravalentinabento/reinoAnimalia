@@ -34,7 +34,7 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filo - Poríferos</title>
-    <link rel="stylesheet" href="css/filo01.css?v=9">
+    <link rel="stylesheet" href="css/filo01.css?v=11">
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
 <body>
@@ -60,12 +60,11 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
             </div>
         </section>
 
-        <!-- Etapa 1 -->
         <section id="intro-etapa-1" class="introducao-filo" style="display: none;">
             <div class="bloco-introducao">
                 <ul>
                     <li><strong>Organização corporal simples:</strong> não possuem tecidos verdadeiros, órgãos ou sistemas especializados. Apesar disso, apresentam diferentes tipos de células, que realizam funções essenciais à sobrevivência do animal.</li>
-                    <li><strong>Células da superfície:</strong> a camada externa do corpo é formada principalmente por células achatadas chamadas pinacócitos, que constituem a pinacoderme.</li>
+                    <li><strong>Células da superfície:</strong> a camada externa do corpo é formada principalmente por células achatadas chamado pinacócitos, que constituem a pinacoderme.</li>
                     <li><strong>Alimentação por filtração:</strong> são animais filtradores, pois retiram da água partículas orgânicas e organismos microscópicos que servem de alimento.</li>
                     <li><strong>Digestão intracelular:</strong> como não possuem sistema digestório, a digestão ocorre no interior das células. Os coanócitos capturam partículas alimentares e os amebócitos distribuem os nutrientes.</li>
                 </ul>
@@ -99,12 +98,10 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
     </main>
 
 <script>
-
 let etapa = <?php echo (int)$etapaInicial; ?>;
 const idAluno = <?php echo (int)$id_aluno; ?>;
 const idTurma = <?php echo (int)$id_turma; ?>;
 const idEvolucao = <?php echo (int)$id_evolucao; ?>;
-
 
 const intro0 = document.getElementById("intro-etapa-0");
 const intro1 = document.getElementById("intro-etapa-1");
@@ -125,7 +122,6 @@ const mainContainer = document.getElementById("main-container");
 const titulosContainer = document.querySelector(".titulos");
 
 function carregarEtapa(e) {
-    
     intro0.style.display = "none";
     intro1.style.display = "none";
     conteudoEsquerda.style.display = "none";
@@ -151,7 +147,8 @@ function carregarEtapa(e) {
 
         modelo.src = "Modelos3d/esponja.glb";
         tituloEsquerda.textContent = "Características da esponja";
-        textoEsquerda.textContent = "As esponjas possuem uma estrutura porosa que permite a entrada contínua de água para filtração de nutrientes.";
+        // Texto corrigido em uma única linha contínua sem quebras de linha indesejadas
+        textoEsquerda.textContent = "Servem de abrigo para outros animais: pequenos peixes, crustáceos e outros invertebrados podem utilizar as esponjas como refúgio contra predadores. As esponjas possuem uma estrutura porosa que permite a entrada contínua de água para filtração de nutrientes.";
         tituloDireita.textContent = "Curiosidades";
         textoDireita.textContent = "Elas não possuem sistema nervoso, muscular ou circulatório, mas suas células conseguem se recompor mesmo se o corpo for totalmente separado!";
     }
@@ -186,7 +183,7 @@ window.onload = function() {
 };
 
 botaoAvancar.addEventListener("click", function () {
-    if (etapa < 2) {
+    if (etapa < 2) { // Limite máximo correto para este filo é a etapa 2
         etapa++;
         carregarEtapa(etapa);
         salvarProgressoNoBanco(etapa);

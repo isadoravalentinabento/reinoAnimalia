@@ -33,7 +33,7 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Filo - Cnidários</title>
-    <link rel="stylesheet" href="css/filo02.css?v=3">
+    <link rel="stylesheet" href="css/filo02.css?v=4">
     <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
 </head>
 <body>
@@ -115,7 +115,7 @@ const idTurma = <?php echo (int)$id_turma; ?>;
 const idEvolucao = <?php echo (int)$id_evolucao; ?>;
 
 const mainContainer = document.getElementById("main-container");
-const titulosContainer = document.querySelector(".titulos"); // Adicionado para não dar erro
+const titulosContainer = document.querySelector(".titulos"); 
 
 const intro0 = document.getElementById("intro-etapa-0");
 const intro1 = document.getElementById("intro-etapa-1");
@@ -241,7 +241,7 @@ window.onload = function() {
 };
 
 botaoAvancar.addEventListener("click", function () {
-    if (etapa < 6) { // Ajustado para o limite máximo de 6 etapas
+    if (etapa < 6) { 
         etapa++;
         carregarEtapa(etapa);
         salvarProgressoNoBanco(etapa);
@@ -251,6 +251,8 @@ botaoAvancar.addEventListener("click", function () {
         salvarProgressoNoBanco(etapa);
     }
 });
+
+
 
 botaoVoltar.addEventListener("click", function () {
     if (etapa > 0) {

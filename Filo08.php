@@ -135,7 +135,7 @@ function carregarEtapa(e) {
             tituloDireita.textContent = "Curiosidades";
             textoDireita.textContent = "";
         } else if (e === 2) {
-            modelo.src = "Modelos3d/OuricoDoMar.glb";
+            modelo.src = "Modelos3d/OuricoDoMarPedra.blend";
             tituloEsquerda.textContent = "Características do Ourico do Mar ";
             textoEsquerda.textContent = "";
             tituloDireita.textContent = "Curiosidades";

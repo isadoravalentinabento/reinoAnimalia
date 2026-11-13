@@ -34,8 +34,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center; 
-    padding: 10px 20px;
+    justify-content: flex-start; /* Mudado de center para flex-start para alinhar do topo para baixo com folga */
+    padding: 20px 20px;
     box-sizing: border-box;
     position: relative;
 }
@@ -136,17 +136,19 @@ body {
     text-align: left;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
 }
-.avancar-container {
+avancar-container {
     width: 100%;
     display: flex;
     justify-content: center;
-    margin-top: 20px; 
+    margin-top: 15px; 
+    margin-bottom: 20px;
     position: static !important; 
 }
+
 .btn-avancar {
     width: 180px;
     height: 45px;
-    margin-left: 2000px;
+    margin-left: 0; 
     background-color: #0c1b68bc;
     color: white;
     border: 2px solid rgba(175, 229, 243, 0.4);
@@ -157,7 +159,6 @@ body {
     transition: 0.3s;
     box-shadow: 0 4px 10px rgba(0,0,0,0.3);
 }
-
 .btn-avancar:hover {
     background-color: #afe5f3;
     color: #040C35;
