@@ -6,9 +6,11 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    overflow: hidden; 
+    overflow: hidden;
     font-family: Georgia, "Times New Roman", serif;
 }
+
+/* ---------- Títulos ---------- */
 .titulos {
     width: 100%;
     text-align: center;
@@ -28,14 +30,16 @@ body {
     opacity: 0.85;
     margin: 0;
 }
+
+/* ---------- Área de introdução (etapas 0 e 1) ---------- */
 .area-intro {
     width: 100%;
     min-height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: flex-start; /* Mudado de center para flex-start para alinhar do topo para baixo com folga */
-    padding: 20px 20px;
+    justify-content: flex-start;
+    padding: 20px;
     box-sizing: border-box;
     position: relative;
 }
@@ -58,8 +62,8 @@ body {
     color: white;
     box-sizing: border-box;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-    max-height: 52vh; 
-    overflow-y: auto;  
+    max-height: 52vh;
+    overflow-y: auto;
 }
 .bloco-introducao::-webkit-scrollbar {
     width: 8px;
@@ -82,24 +86,32 @@ body {
     line-height: 1.5;
     margin-bottom: 15px;
     padding-left: 15px;
-    border-left: 4px solid #afe5f3; 
-    text-align: left; 
+    border-left: 4px solid #afe5f3;
+    text-align: left;
 }
 .bloco-introducao li strong {
     color: #afe5f3;
 }
+
+/* ---------- Área 3D (etapas 2 a 13) ---------- */
+/* Grid de 3 colunas x 2 linhas:
+   linha 1 -> esquerda | modelo 3D | direita
+   linha 2 ->  (vazio) |  (vazio)  | botão avançar */
 .area-3d {
     width: 100% !important;
     height: calc(100vh - 100px) !important;
     display: grid !important;
-    grid-template-columns: 350px 1fr 350px !important; 
+    grid-template-columns: 350px 1fr 350px !important;
+    grid-template-rows: 1fr auto !important;
     align-items: center !important;
     justify-content: center !important;
     gap: 30px !important;
     padding: 10px 50px !important;
     box-sizing: border-box !important;
 }
+
 .area-3d .conteudo-esquerda {
+    grid-row: 1 !important;
     grid-column: 1 !important;
     width: 100% !important;
     background-color: rgba(4, 12, 53, 0.9);
@@ -111,20 +123,25 @@ body {
     text-align: left;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
 }
+
 .area-3d .modelo {
+    grid-row: 1 !important;
     grid-column: 2 !important;
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
     width: 100% !important;
 }
+
 .area-3d model-viewer {
     display: block !important;
     width: 420px !important;
     height: 420px !important;
     margin: 0 auto !important;
 }
+
 .area-3d .conteudo-direita {
+    grid-row: 1 !important;
     grid-column: 3 !important;
     width: 100% !important;
     background-color: rgba(4, 12, 53, 0.9);
@@ -136,19 +153,28 @@ body {
     text-align: left;
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
 }
-avancar-container {
+
+/* ---------- Botão Avançar ---------- */
+.avancar-container {
     width: 100%;
     display: flex;
-    justify-content: center;
-    margin-top: 15px; 
+    justify-content: center;   /* padrão (intro): centralizado */
+    margin-top: 15px;
     margin-bottom: 20px;
-    position: static !important; 
+    position: static !important;
+}
+
+/* na área 3D: linha de baixo, coluna da direita, alinhado à direita */
+.area-3d .avancar-container {
+    grid-row: 2 !important;
+    grid-column: 3 !important;
+    justify-content: flex-end !important;
+    margin: 0 !important;
 }
 
 .btn-avancar {
     width: 180px;
     height: 45px;
-    margin-left: 0; /* Removido o deslocamento de 500px que jogava ele para fora */
     background-color: #0c1b68bc;
     color: white;
     border: 2px solid rgba(175, 229, 243, 0.4);
@@ -164,6 +190,8 @@ avancar-container {
     color: #040C35;
     transform: scale(1.05);
 }
+
+
 .btn-voltar-topo {
     position: fixed;
     top: 90px;
@@ -172,17 +200,15 @@ avancar-container {
     border: none;
     padding: 0;
     cursor: pointer;
-    z-index: 9999; 
+    z-index: 9999;
     transition: transform 0.3s ease;
 }
-
 .btn-voltar-topo img {
     width: 50px;
     height: auto;
     display: block;
-    pointer-events: none; 
+    pointer-events: none;
 }
-
 .btn-voltar-topo:hover {
     transform: scale(1.15);
 }
