@@ -52,13 +52,13 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
         <section id="intro-etapa-0" class="introducao-filo">
             <div class="bloco-introducao">
                 <ul>
-    <li><strong>Corpo achatado:</strong> apresentam o corpo achatado no sentido dorsoventral, isto é, de cima para baixo. Essa forma facilita as trocas de substâncias por difusão através da superfície corporal.</li>
-    <li><strong>Simetria bilateral:</strong> o corpo pode ser dividido longitudinalmente em duas metades semelhantes, direita e esquerda. Essa característica está relacionada à organização do corpo e à movimentação direcionada.</li>
-    <li><strong>Triblásticos:</strong> durante o desenvolvimento embrionário, formam três folhetos germinativos: ectoderme, mesoderme e endoderme. Esses folhetos dão origem aos diferentes tecidos e estruturas do animal.</li>
-    <li><strong>Acelomados:</strong> não possuem celoma, que é uma cavidade corporal revestida por tecido de origem mesodérmica. O espaço entre a parede do corpo e os órgãos é preenchido por tecidos.</li>
-    <li><strong>Habitat:</strong> podem viver em ambientes aquáticos de água doce ou salgada e em locais terrestres úmidos. Algumas espécies são de vida livre, como as planárias, enquanto outras são parasitas, como as tênias e os esquistossomos.</li>
-    <li><strong>Organização corporal:</strong> apresentam órgãos e sistemas relativamente simples, mas não possuem todos os sistemas encontrados em animais mais complexos. O nível de desenvolvimento varia conforme a espécie e seu modo de vida.</li>
-</ul>
+                    <li><strong>Corpo achatado:</strong> apresentam o corpo achatado no sentido dorsoventral, isto é, de cima para baixo. Essa forma facilita as trocas de substâncias por difusão através da superfície corporal.</li>
+                    <li><strong>Simetria bilateral:</strong> o corpo pode ser dividido longitudinalmente em duas metades semelhantes, direita e esquerda. Essa característica está relacionada à organização do corpo e à movimentação direcionada.</li>
+                    <li><strong>Triblásticos:</strong> durante o desenvolvimento embrionário, formam três folhetos germinativos: ectoderme, mesoderme e endoderme. Esses folhetos dão origem aos diferentes tecidos e estruturas do animal.</li>
+                    <li><strong>Acelomados:</strong> não possuem celoma, que é uma cavidade corporal revestida por tecido de origem mesodérmica. O espaço entre a parede do corpo e os órgãos é preenchido por tecidos.</li>
+                    <li><strong>Habitat:</strong> podem viver em ambientes aquáticos de água doce ou salgada e em locais terrestres úmidos. Algumas espécies são de vida livre, como as planárias, enquanto outras são parasitas, como as tênias e os esquistossomos.</li>
+                    <li><strong>Organização corporal:</strong> apresentam órgãos e sistemas relativamente simples, mas não possuem todos os sistemas encontrados em animais mais complexos. O nível de desenvolvimento varia conforme a espécie e seu modo de vida.</li>
+                </ul>
             </div>
         </section>
 
@@ -215,11 +215,11 @@ function carregarEtapa(e) {
         conteudoDireita.style.display = "block";
         titulosContainer.style.display = "none"; 
 
-        modelo.src = "Modelos3d/Tenia.glb";
-        tituloEsquerda.textContent = "Características da Tenia";
-        textoEsquerda.textContent = "Corpo alongado e achatado: as tênias possuem corpo achatado, estreito e semelhante a uma fita. Seu comprimento varia conforme a espécie; algumas podem atingir vários metros.";
-        tituloDireita.textContent = "";
-        textoDireita.textContent = "";
+        modelo.src = "Modelos3d/planaria.glb";
+        tituloEsquerda.textContent = "Características da Planaria";
+        textoEsquerda.textContent = "Sistema nervoso: possuem gânglios nervosos na região anterior e cordões nervosos que percorrem o corpo. Essa organização permite coordenar movimentos e responder a estímulos ambientais.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "São estudadas pela ciência: a capacidade de regeneração das planárias desperta interesse científico, especialmente nos estudos sobre células-tronco, formação de tecidos e mecanismos de regeneração. Pesquisas com esses animais ajudam a compreender como os organismos reconstroem partes do corpo.";
 
     }else if (e === 8) {
         mainContainer.className = "area-3d";
@@ -230,7 +230,7 @@ function carregarEtapa(e) {
 
         modelo.src = "Modelos3d/Tenia.glb";
         tituloEsquerda.textContent = "Características da Tenia";
-        textoEsquerda.textContent = "Escólex (região de fixação): é a região anterior do corpo, popularmente chamada de cabeça. Possui estruturas que permitem a fixação na parede do intestino do hospedeiro, como ventosas. Na Taenia solium, também há uma estrutura com ganchos; na Taenia saginata, esses ganchos estão ausentes.";
+        textoEsquerda.textContent = " Corpo alongado e achatado: as tênias possuem corpo achatado, estreito e semelhante a uma fita. Seu comprimento varia conforme a espécie; algumas podem atingir vários metros. Corpo dividido em proglótides: o corpo é formado por segmentos chamados proglótides, que contêm estruturas reprodutoras. Elas se desenvolvem a partir da região próxima à cabeça e amadurecem à medida que se afastam dela.";
         tituloDireita.textContent = "Curiosidades";
         textoDireita.textContent = "São conhecidas como solitárias: esse nome popular está relacionado ao fato de que, frequentemente, apenas uma tênia adulta se estabelece no intestino do hospedeiro. Entretanto, pode haver mais de um indivíduo.";
 
@@ -243,7 +243,7 @@ function carregarEtapa(e) {
 
         modelo.src = "Modelos3d/Tenia.glb";
         tituloEsquerda.textContent = "Características da Tenia";
-        textoEsquerda.textContent = "Ausência de sistema digestório: as tênias não possuem boca nem tubo digestório. Como vivem no intestino do hospedeiro, absorvem os nutrientes já digeridos diretamente pela superfície do corpo.";
+        textoEsquerda.textContent = "Escólex (região de fixação): é a região anterior do corpo, popularmente chamada de cabeça. Possui estruturas que permitem a fixação na parede do intestino do hospedeiro, como ventosas. Na Taenia solium, também há uma estrutura com ganchos; na Taenia saginata, esses ganchos estão ausentes.";
         tituloDireita.textContent = "Curiosidades";
         textoDireita.textContent = "Podem atingir vários metros: a Taenia solium geralmente mede cerca de 3 a 5 metros, enquanto a Taenia saginata pode atingir aproximadamente 6 a 7 metros. O tamanho varia de acordo com o indivíduo e as condições de desenvolvimento.";
 
@@ -256,9 +256,22 @@ function carregarEtapa(e) {
 
         modelo.src = "Modelos3d/Tenia.glb";
         tituloEsquerda.textContent = "Características da Tenia";
-        textoEsquerda.textContent = " Vida parasitária: são endoparasitas, ou seja, vivem no interior de outros organismos e obtêm deles os nutrientes necessários à sobrevivência. Na fase adulta, as espécies que causam teníase vivem principalmente no intestino delgado humano.";
+        textoEsquerda.textContent = "Ausência de sistema digestório: as tênias não possuem boca nem tubo digestório. Como vivem no intestino do hospedeiro, absorvem os nutrientes já digeridos diretamente pela superfície do corpo.";
         tituloDireita.textContent = "Curiosidades";
         textoDireita.textContent = "Cada proglótide funciona como uma unidade reprodutiva: os segmentos maduros possuem órgãos reprodutores, e os segmentos grávidos podem conter milhares de ovos. Isso contribui para a capacidade de reprodução e disseminação desses parasitas.";
+
+    }else if (e === 10) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/Tenia.glb";
+        tituloEsquerda.textContent = "Características da Tenia";
+        textoEsquerda.textContent = " Vida parasitária: são endoparasitas, ou seja, vivem no interior de outros organismos e obtêm deles os nutrientes necessários à sobrevivência. Na fase adulta, as espécies que causam teníase vivem principalmente no intestino delgado humano.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Possuem ciclos de vida com mais de um hospedeiro: a Taenia solium tem os suínos como hospedeiros intermediários, enquanto a Taenia saginata tem os bovinos. Os seres humanos podem abrigar a forma adulta dessas duas espécies.";
 
     }else if (e === 11) {
         mainContainer.className = "area-3d";
@@ -269,9 +282,9 @@ function carregarEtapa(e) {
 
         modelo.src = "Modelos3d/Tenia.glb";
         tituloEsquerda.textContent = "Características da Tenia";
-        textoEsquerda.textContent = "Reprodução: são hermafroditas, pois cada proglótide madura possui estruturas reprodutoras masculinas e femininas. A fecundação pode ocorrer entre proglótides, e também pode ocorrer autofecundação.";
+        textoEsquerda.textContent = " Reprodução: são hermafroditas, pois cada proglótide madura possui estruturas reprodutoras masculinas e femininas. A fecundação pode ocorrer entre proglótides, e também pode ocorrer autofecundação.";
         tituloDireita.textContent = "Curiosidades";
-        textoDireita.textContent = "Possuem ciclos de vida com mais de um hospedeiro: a Taenia solium tem os suínos como hospedeiros intermediários, enquanto a Taenia saginata tem os bovinos. Os seres humanos podem abrigar a forma adulta dessas duas espécies.";
+        textoDireita.textContent = "Teníase e cisticercose são diferentes: a teníase ocorre quando uma pessoa ingere carne bovina ou suína contaminada com larvas da tênia e insuficientemente cozida. Já a cisticercose humana ocorre quando há ingestão de ovos de Taenia solium, que podem originar larvas nos tecidos. Portanto, são formas diferentes de infecção.";
 
     }else if (e === 12) {
         mainContainer.className = "area-3d";
@@ -282,20 +295,7 @@ function carregarEtapa(e) {
 
         modelo.src = "Modelos3d/Tenia.glb";
         tituloEsquerda.textContent = "Características da Tenia";
-        textoEsquerda.textContent = " Crescimento contínuo: a região chamada colo, localizada logo após o escólex, produz novas proglótides. À medida que o animal cresce, os segmentos mais antigos amadurecem e os que estão na extremidade posterior podem se desprender.";
-        tituloDireita.textContent = "Curiosidades";
-        textoDireita.textContent = "Teníase e cisticercose são diferentes: a teníase ocorre quando uma pessoa ingere carne bovina ou suína contaminada com larvas da tênia e insuficientemente cozida. Já a cisticercose humana ocorre quando há ingestão de ovos de Taenia solium, que podem originar larvas nos tecidos. Portanto, são formas diferentes de infecção.";
-
-    }else if (e === 13) {
-        mainContainer.className = "area-3d";
-        conteudoEsquerda.style.display = "block";
-        conteudoModelo.style.display = "block";
-        conteudoDireita.style.display = "block";
-        titulosContainer.style.display = "none"; 
-
-        modelo.src = "Modelos3d/Tenia.glb";
-        tituloEsquerda.textContent = "Características da Tenia";
-        textoEsquerda.textContent = "Corpo dividido em proglótides: o corpo é formado por segmentos chamados proglótides, que contêm estruturas reprodutoras. Elas se desenvolvem a partir da região próxima à cabeça e amadurecem à medida que se afastam dela.";
+        textoEsquerda.textContent = "Crescimento contínuo: a região chamada colo, localizada logo após o escólex, produz novas proglótides. À medida que o animal cresce, os segmentos mais antigos amadurecem e os que estão na extremidade posterior podem se desprender.";
         tituloDireita.textContent = "Curiosidades";
         textoDireita.textContent = "A prevenção está relacionada à higiene e à segurança alimentar: saneamento básico, lavagem adequada das mãos, inspeção sanitária das carnes e consumo de carne bem cozida ajudam a prevenir infecções. A higiene e o saneamento também são importantes para interromper a disseminação dos ovos no ambiente.";
 
@@ -331,13 +331,13 @@ window.onload = function() {
 };
 
 botaoAvancar.addEventListener("click", function () {
-    if (etapa < 13) { 
+    if (etapa < 12) { 
         etapa++;
         carregarEtapa(etapa);
         salvarProgressoNoBanco(etapa);
     } else {
         alert("Aqui futuramente iremos para o quiz!");
-        etapa = 14;
+        etapa = 13;
         salvarProgressoNoBanco(etapa);
     }
 });
