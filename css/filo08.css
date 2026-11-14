@@ -1,0 +1,188 @@
+body {
+    margin: 0;
+    height: 100vh;
+    background-image: url("../img/fundo 3d.png");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    overflow: hidden; 
+    font-family: Georgia, "Times New Roman", serif;
+}
+.titulos {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.titulos h1 {
+    color: #afe5f3;
+    font-size: 30px;
+    margin: 0 0 5px 0;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.4);
+}
+.titulos h2 {
+    color: #ffffff;
+    font-size: 17px;
+    font-weight: normal;
+    opacity: 0.85;
+    margin: 0;
+}
+.area-intro {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Mudado de center para flex-start para alinhar do topo para baixo com folga */
+    padding: 20px 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+.introducao-filo {
+    width: 100%;
+    max-width: 1200px;
+    margin: 5px auto;
+    padding: 0 10px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+}
+.bloco-introducao {
+    width: 100%;
+    max-width: 1200px;
+    background-color: rgba(4, 12, 53, 0.9);
+    padding: 25px 40px;
+    border-radius: 25px;
+    border: 2px solid rgba(175, 229, 243, 0.3);
+    color: white;
+    box-sizing: border-box;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+    max-height: 52vh; 
+    overflow-y: auto;  
+}
+.bloco-introducao::-webkit-scrollbar {
+    width: 8px;
+}
+.bloco-introducao::-webkit-scrollbar-track {
+    background: rgba(4, 12, 53, 0.5);
+    border-radius: 10px;
+}
+.bloco-introducao::-webkit-scrollbar-thumb {
+    background: #afe5f3;
+    border-radius: 10px;
+}
+.bloco-introducao ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+.bloco-introducao li {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 15px;
+    padding-left: 15px;
+    border-left: 4px solid #afe5f3; 
+    text-align: left; 
+}
+.bloco-introducao li strong {
+    color: #afe5f3;
+}
+.area-3d {
+    width: 100% !important;
+    height: calc(100vh - 100px) !important;
+    display: grid !important;
+    grid-template-columns: 350px 1fr 350px !important; 
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 30px !important;
+    padding: 10px 50px !important;
+    box-sizing: border-box !important;
+}
+.area-3d .conteudo-esquerda {
+    grid-column: 1 !important;
+    width: 100% !important;
+    background-color: rgba(4, 12, 53, 0.9);
+    padding: 20px;
+    border-radius: 25px;
+    border: 2px solid rgba(175, 229, 243, 0.3);
+    color: white;
+    box-sizing: border-box;
+    text-align: left;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+.area-3d .modelo {
+    grid-column: 2 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    width: 100% !important;
+}
+.area-3d model-viewer {
+    display: block !important;
+    width: 420px !important;
+    height: 420px !important;
+    margin: 0 auto !important;
+}
+.area-3d .conteudo-direita {
+    grid-column: 3 !important;
+    width: 100% !important;
+    background-color: rgba(4, 12, 53, 0.9);
+    padding: 20px;
+    border-radius: 25px;
+    border: 2px solid rgba(175, 229, 243, 0.3);
+    color: white;
+    box-sizing: border-box;
+    text-align: left;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
+}
+avancar-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px; 
+    margin-bottom: 20px;
+    position: static !important; 
+}
+
+.btn-avancar {
+    width: 180px;
+    height: 45px;
+    margin-left: 0; /* Removido o deslocamento de 500px que jogava ele para fora */
+    background-color: #0c1b68bc;
+    color: white;
+    border: 2px solid rgba(175, 229, 243, 0.4);
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+}
+.btn-avancar:hover {
+    background-color: #afe5f3;
+    color: #040C35;
+    transform: scale(1.05);
+}
+.btn-voltar-topo {
+    position: fixed;
+    top: 90px;
+    left: 40px;
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    z-index: 9999; 
+    transition: transform 0.3s ease;
+}
+
+.btn-voltar-topo img {
+    width: 50px;
+    height: auto;
+    display: block;
+    pointer-events: none; 
+}
+
+.btn-voltar-topo:hover {
+    transform: scale(1.15);
+}

@@ -44,13 +44,44 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
             <img src="img/icons/left.png" alt="Voltar">
         </button>
 
+          <div class="titulos">
+            <h1>Conhecendo o Filo dos platelmintos</h1>
+            <h2>Características do filo:</h2>
+        </div>
 
-        <section id="introducao-filo" class="introducao-filo">
-            <h1>Conhecendo o Filo</h1>
-            <h2>Filo dos Moluscos</h2>
-            <p>
-                aaaaaaaaaaaaaaaaa
-            </p>
+
+        <section id="intro-etapa-0" class="introducao-filo">
+            <div class="bloco-introducao"> 
+                <ul>
+                    <li><strong>Simetria radial:</strong> apresentam o corpo organizado ao redor de um eixo central, permitindo que suas estruturas sejam distribuídas ao redor da região oral.</li>
+                    <li><strong>Animais diblásticos:</strong> durante o desenvolvimento embrionário, apresentam dois folhetos germinativos, a ectoderme e a endoderme.</li>
+                    <li><strong>Organização corporal em tecidos:</strong> possuem tecidos verdadeiros, diferentemente dos poríferos.</li>
+                    <li><strong>Mesogleia:</strong> entre a epiderme e a gastroderme existe uma camada gelatinosa chamada mesogleia.</li>
+                    <li><strong>Cnidócitos:</strong> são células especializadas características do filo, utilizadas principalmente na defesa e na captura de presas.</li>
+                    <li><strong>Tentáculos:</strong> apresentam projeções ao redor da região oral, utilizadas principalmente na captura de alimentos.</li>
+                    <li><strong>Cavidade gastrovascular:</strong> possuem uma cavidade interna responsável pela digestão e distribuição de nutrientes.</li>
+                    <li><strong>Sistema digestório incompleto:</strong> não possuem ânus nem tubo digestório completo.</li>
+                    <li><strong>Alimentação predominantemente carnívora:</strong> capturam pequenos animais aquáticos utilizando seus tentáculos e cnidócitos.</li>
+                    <li><strong>Ausência de sistemas circulatório, respiratório e excretor:</strong> Não possuem órgãos especializados para essas funções.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="intro-etapa-1" class="introducao-filo" style="display: none;">
+            <div class="bloco-introducao"> <!-- Corrigido de bloco-indroducao para bloco-introducao -->
+                <ul>
+                    <li><strong>Sistema nervoso difuso:</strong> Possuem uma rede de células nervosas distribuídas pelo corpo, sem cérebro ou sistema nervoso centralizado.</li>
+                    <li><strong>Estruturas sensoriais:</strong> algumas medusas apresentam estatocistos, responsáveis pela percepção do equilíbrio e da posição corporal.</li>
+                    <li><strong>Duas formas corporais:</strong> podem apresentar duas organizações principais, denominadas pólipo e medusa.</li>
+                    <li><strong>Pólipos geralmente sésseis:</strong> são formas normalmente fixadas a um substrato, como rochas ou outros organismos.</li>
+                    <li><strong>Medusas livre-natantes:</strong> apresentam corpo geralmente gelatinoso e movimentam-se por contrações musculares.</li>
+                    <li><strong>Reprodução sexuada e assexuada:</strong> podem reproduzir-se por meio da formação de gametas ou por processos assexuados.</li>
+                    <li><strong>Desenvolvimento larval:</strong> muitas espécies apresentam uma larva chamada plânula, geralmente ciliada e de vida livre.</li>
+                    <li><strong>Polimorfismo:</strong> algumas espécies coloniais apresentam indivíduos com funções diferentes.</li>
+                    <li><strong>Habitat aquático:</strong> são animais exclusivamente aquáticos, sendo a maioria marinha.</li>
+                    <li><strong>Importância ecológica:</strong> participam das cadeias alimentares aquáticas, servindo de alimento e formando recifes.</li>
+                </ul>
+            </div>
         </section>
 
 
