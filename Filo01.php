@@ -147,10 +147,45 @@ function carregarEtapa(e) {
 
         modelo.src = "Modelos3d/esponja.glb";
         tituloEsquerda.textContent = "Características da esponja";
-        // Texto corrigido em uma única linha contínua sem quebras de linha indesejadas
-        textoEsquerda.textContent = "Servem de abrigo para outros animais: pequenos peixes, crustáceos e outros invertebrados podem utilizar as esponjas como refúgio contra predadores. As esponjas possuem uma estrutura porosa que permite a entrada contínua de água para filtração de nutrientes.";
+        textoEsquerda.textContent = "Grande variedade de formas e cores: as esponjas podem apresentar formas arredondadas, tubulares, ramificadas ou semelhantes a vasos. Suas cores e tamanhos variam conforme a espécie e o ambiente em que vivem.";
         tituloDireita.textContent = "Curiosidades";
-        textoDireita.textContent = "Elas não possuem sistema nervoso, muscular ou circulatório, mas suas células conseguem se recompor mesmo se o corpo for totalmente separado!";
+        textoDireita.textContent = "Servem de abrigo para outros animais: pequenos peixes, crustáceos e outros invertebrados podem utilizar as esponjas como refúgio contra predadores. As esponjas possuem uma estrutura porosa que permite a entrada contínua de água para filtração de nutrientes.";
+    }else if (e === 3) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/esponja.glb";
+        tituloEsquerda.textContent = "Características da esponja";
+        textoEsquerda.textContent = "Alimentação por filtração: a água circula pelo corpo da esponja, levando oxigênio e partículas alimentares, como bactérias e organismos microscópicos. A maior parte das espécies é filtradora, embora existam exceções carnívoras.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Podem ajudar no monitoramento ambiental: por filtrarem grandes volumes de água, as esponjas podem ser utilizadas em estudos ambientais para investigar a presença de contaminantes e avaliar condições dos ecossistemas aquáticos.";
+    }else if (e === 4) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/esponja.glb";
+        tituloEsquerda.textContent = "Características da esponja";
+        textoEsquerda.textContent = "Capacidade de regeneração: algumas espécies conseguem regenerar partes do corpo e, em determinadas condições, fragmentos podem originar novos indivíduos. Essa capacidade varia entre as espécies.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Possuem importância para a medicina: substâncias encontradas em esponjas marinhas têm sido estudadas para o desenvolvimento de medicamentos. Compostos desse grupo contribuíram para pesquisas de substâncias com atividade antiviral, antibacteriana e antitumoral.";
+    }else if (e === 5) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/esponja.glb";
+        tituloEsquerda.textContent = "Características da esponja";
+        textoEsquerda.textContent = "Defesas químicas: como não conseguem fugir dos predadores, algumas esponjas produzem substâncias químicas que dificultam o ataque de outros animais ou a ocupação do espaço por organismos concorrentes.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "mais assunto, ou add imagem";
     }
 }
 
@@ -183,13 +218,13 @@ window.onload = function() {
 };
 
 botaoAvancar.addEventListener("click", function () {
-    if (etapa < 2) { // Limite máximo correto para este filo é a etapa 2
+    if (etapa < 5) { 
         etapa++;
         carregarEtapa(etapa);
         salvarProgressoNoBanco(etapa);
     } else {
         alert("Aqui futuramente iremos para o quiz!");
-        etapa = 3;
+        etapa = 6;
         salvarProgressoNoBanco(etapa);
     }
 });

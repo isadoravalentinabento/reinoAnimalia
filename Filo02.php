@@ -149,7 +149,7 @@ function carregarEtapa(e) {
         mainContainer.className = "area-intro";
         intro1.style.display = "block";
         titulosContainer.style.display = "none"; 
-    } else if (e === 2) { // Etapa 2 agora aponta para o Coral (evitando o buraco na contagem)
+    } else if (e === 2) {
         mainContainer.className = "area-3d";
         conteudoEsquerda.style.display = "block";
         conteudoModelo.style.display = "block";
@@ -158,10 +158,94 @@ function carregarEtapa(e) {
 
         modelo.src = "Modelos3d/Coral.glb";
         tituloEsquerda.textContent = "Características do Coral";
-        textoEsquerda.textContent = "Os corais formam colônias importantes para os recifes.";
+        textoEsquerda.textContent = "Organização colonial: muitos corais são formados por colônias de pequenos indivíduos chamados pólipos, que vivem conectados entre si. Esses indivíduos compartilham estruturas e contribuem para o funcionamento da colônia.";
         tituloDireita.textContent = "Curiosidades";
-        textoDireita.textContent = "Muitos corais possuem algas simbióticas chamadas zooxantelas.";
-    } else if (e === 3) {
+        textoDireita.textContent = " Formam ambientes de grande biodiversidade: os recifes de coral abrigam uma grande variedade de peixes, crustáceos, moluscos e outros organismos marinhos, oferecendo alimento, abrigo e proteção.";
+    }else if (e === 3) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/Coral.glb";
+        tituloEsquerda.textContent = "Características do Coral";
+        textoEsquerda.textContent = " Corpo em forma de pólipo: apresentam corpo cilíndrico, com a boca localizada na extremidade superior e rodeada por tentáculos. Esses tentáculos auxiliam na captura de alimentos.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Podem formar estruturas gigantescas: ao longo do tempo, o acúmulo de esqueletos calcários de diferentes gerações de corais pode originar grandes recifes.";
+    } else if (e === 4) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/Coral.glb";
+        tituloEsquerda.textContent = "Características do Coral";
+        textoEsquerda.textContent = "Esqueleto calcário: muitos corais produzem uma estrutura externa de carbonato de cálcio ao redor do corpo. Quando os pólipos morrem, seus esqueletos permanecem e podem servir de base para o desenvolvimento de novas gerações, contribuindo para a formação dos recifes.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Podem sofrer branqueamento: quando submetidos a condições ambientais desfavoráveis, como temperaturas elevadas, muitos corais perdem suas zooxantelas, ficando esbranquiçados. Esse processo pode comprometer sua sobrevivência.";
+    }else if (e === 5) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/Coral.glb";
+        tituloEsquerda.textContent = "Características do Coral";
+        textoEsquerda.textContent = "Fixação ao substrato: os pólipos geralmente permanecem fixos em superfícies, como rochas e estruturas calcárias. Essa característica permite o crescimento das colônias ao longo do tempo.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Existem diferentes tipos de recifes: podem ser classificados em recifes em franja, recifes em barreira e atóis, que apresentam diferentes formas e relações com a costa.";
+    } else if (e === 6) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/Coral.glb";
+        tituloEsquerda.textContent = "Características do Coral";
+        textoEsquerda.textContent = " Associação com zooxantelas: muitos corais vivem em associação com algas microscópicas chamadas zooxantelas, que permanecem em seus tecidos. Essas algas realizam fotossíntese e fornecem parte dos nutrientes utilizados pelos corais.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Contribuem para a proteção das regiões costeiras: os recifes ajudam a reduzir a força das ondas, diminuindo a erosão e protegendo áreas próximas à costa.";
+    } else if (e === 7) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/Coral.glb";
+        tituloEsquerda.textContent = "Características do Coral";
+        textoEsquerda.textContent = " Alimentação: capturam pequenos organismos e partículas alimentares por meio dos tentáculos. Nas espécies que possuem zooxantelas, parte da nutrição também depende dos produtos da fotossíntese dessas algas.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Possuem importância econômica: contribuem para atividades como pesca e turismo, além de apresentarem importância para pesquisas científicas e conservação ambiental.";
+    } else if (e === 8) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/Coral.glb";
+        tituloEsquerda.textContent = "Características do Coral";
+        textoEsquerda.textContent = "Reprodução: podem reproduzir-se por meio de processos sexuados e assexuados. A reprodução assexuada permite o crescimento e a expansão das colônias.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "São animais, não plantas: apesar de permanecerem fixos e apresentarem aparência semelhante à de vegetais, os corais são animais que possuem tecidos e células especializadas.";
+    } else if (e === 9) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/Coral.glb";
+        tituloEsquerda.textContent = "Características do Coral";
+        textoEsquerda.textContent = "Classificação: os corais pertencem à classe Anthozoa, do filo Cnidaria. Esse grupo apresenta exclusivamente a forma de pólipo, não possuindo fase medusa.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "";
+    } else if (e === 10) {
         mainContainer.className = "area-3d";
         conteudoEsquerda.style.display = "block";
         conteudoModelo.style.display = "block";
@@ -170,10 +254,94 @@ function carregarEtapa(e) {
 
         modelo.src = "Modelos3d/Anemona.glb";
         tituloEsquerda.textContent = "Características da anêmona do Mar";
-        textoEsquerda.textContent = "Vivem fixas ao substrato e usam tentáculos urticantes.";
+        textoEsquerda.textContent = "Organização corporal em pólipo: apresentam corpo cilíndrico, com uma extremidade geralmente fixada ao substrato e outra contendo a boca, rodeada por tentáculos. Essa organização é característica da classe Anthozoa, à qual pertencem.";
         tituloDireita.textContent = "Curiosidades";
-        textoDireita.textContent = "Fazem simbiose famosa com o peixe-palhaço!";  
-    } else if (e === 4) {
+        textoDireita.textContent = "Mutualismo com o peixe-palhaço: essa associação beneficia ambos os animais. O peixe-palhaço encontra proteção entre os tentáculos da anêmona, enquanto ela recebe nutrientes provenientes dos restos de alimento e dos excrementos do peixe.";  
+    }else if (e === 11) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/Anemona.glb";
+        tituloEsquerda.textContent = "Características da anêmona do Mar";
+        textoEsquerda.textContent = " Vida solitária: a maioria das anêmonas-do-mar vive como indivíduos isolados, embora possam ser encontradas em agrupamentos, especialmente em decorrência da reprodução assexuada.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Associação com o caranguejo-eremita: algumas anêmonas vivem sobre as conchas utilizadas pelos caranguejos-eremitas. Quando o caranguejo troca de concha, transfere a anêmona para a nova, mantendo a associação. A anêmona oferece proteção contra predadores, enquanto o caranguejo facilita seu deslocamento e a obtenção de alimento.";  
+    } else if (e === 12) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/Anemona.glb";
+        tituloEsquerda.textContent = "Características da anêmona do Mar";
+        textoEsquerda.textContent = "Habitat marinho: vivem em ambientes marinhos, podendo ser encontradas em regiões entre marés, recifes, costões rochosos e ilhas oceânicas. Algumas espécies também habitam manguezais.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = " Formação de agrupamentos: embora geralmente sejam solitárias, algumas anêmonas podem formar agrupamentos por meio da reprodução assexuada, originando novos indivíduos próximos uns dos outros.";  
+    }else if (e === 13) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/Anemona.glb";
+        tituloEsquerda.textContent = "Características da anêmona do Mar";
+        textoEsquerda.textContent = "Corpo mole e sem esqueleto calcário: apresentam corpo flexível, sem o esqueleto calcário característico de muitos corais. Sua estrutura corporal permite a contração e a retração.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Deslocamento lento: apesar de permanecerem fixadas ao substrato durante grande parte da vida, algumas espécies conseguem se deslocar lentamente, buscando condições mais favoráveis à sobrevivência.";  
+    }else if (e === 14) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/Anemona.glb";
+        tituloEsquerda.textContent = "Características da anêmona do Mar";
+        textoEsquerda.textContent = "Tentáculos com cnidócitos: possuem tentáculos ao redor da boca, contendo células especializadas com estruturas urticantes. Essas estruturas liberam substâncias que ajudam a paralisar as presas e facilitam sua captura.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Diferentes estratégias reprodutivas: além da reprodução sexuada, podem se reproduzir assexuadamente por brotamento ou fissão, processos que permitem a formação de novos indivíduos.";  
+    }else if (e === 15) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/Anemona.glb";
+        tituloEsquerda.textContent = "Características da anêmona do Mar";
+        textoEsquerda.textContent = "Alimentação carnívora: alimentam-se principalmente de pequenos animais marinhos, como peixes e crustáceos. Utilizam os tentáculos para capturar as presas e conduzi-las até a boca.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = " Capacidade de retração: quando necessário, muitas anêmonas conseguem retrair seus tentáculos e contrair o corpo, adquirindo uma aparência semelhante a um pedaço de gelatina.";  
+    }else if (e === 16) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/Anemona.glb";
+        tituloEsquerda.textContent = "Características da anêmona do Mar";
+        textoEsquerda.textContent = "Fixação ao substrato: geralmente permanecem fixadas em rochas ou outras superfícies por meio de uma estrutura localizada na base do corpo. Entretanto, algumas espécies conseguem deslocar-se lentamente em busca de condições mais favoráveis.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Também são presas: apesar de serem predadoras, as anêmonas podem servir de alimento para outros animais, como lesmas marinhas, estrelas-do-mar e alguns peixes.";  
+    }else if (e === 17) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/Anemona.glb";
+        tituloEsquerda.textContent = "Características da anêmona do Mar";
+        textoEsquerda.textContent = "Reprodução sexuada e assexuada: podem reproduzir-se por meio da formação de gametas ou por processos assexuados, como brotamento e fissão, que permitem originar novos indivíduos.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "";  
+    }else if (e === 18) {
         mainContainer.className = "area-3d";
         conteudoEsquerda.style.display = "block";
         conteudoModelo.style.display = "block";
@@ -182,10 +350,106 @@ function carregarEtapa(e) {
 
         modelo.src = "Modelos3d/aguaviva.glb";
         tituloEsquerda.textContent = "Características da água-viva";
-        textoEsquerda.textContent = "Forma medusa livre-natante com corpo gelatinoso.";
+        textoEsquerda.textContent = "Sistema digestório: possuem uma cavidade gastrovascular com uma única abertura, utilizada tanto para a entrada de alimentos quanto para a eliminação de resíduos.";
+        tituloDireita.textContent = "Características";
+        textoDireita.textContent = "Alimentação: são predominantemente carnívoras, capturando pequenos organismos aquáticos, como plâncton e outras presas."; 
+    }else if (e === 19) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/aguaviva.glb";
+        tituloEsquerda.textContent = "Características da água-viva";
+        textoEsquerda.textContent = "Locomoção: deslocam-se por meio de contrações rítmicas do corpo, que impulsionam a água e permitem seu movimento. Também podem ser transportadas pelas correntes marinhas.";
+        tituloDireita.textContent = "Características";
+        textoDireita.textContent = "Sistema nervoso: não possuem cérebro, apresentando uma rede nervosa difusa e estruturas sensoriais capazes de detectar estímulos, como luz e substâncias químicas.";
+    }else if (e === 20) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/aguaviva.glb";
+        tituloEsquerda.textContent = "Características da água-viva";
+        textoEsquerda.textContent = "Ausência de sistemas especializados: não possuem sistemas circulatório, respiratório ou excretor, realizando trocas de substâncias diretamente com o ambiente.";
+        tituloDireita.textContent = "Características";
+        textoDireita.textContent = "Reprodução: apresentam reprodução sexuada e, em muitos grupos, alternância entre uma fase de pólipo, geralmente séssil e assexuada, e uma fase de medusa, geralmente livre e sexuada.";
+    }else if (e === 21) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/aguaviva.glb";
+        tituloEsquerda.textContent = "Características da água-viva";
+        textoEsquerda.textContent = "Classificação: são animais invertebrados pertencentes ao filo Cnidaria, sendo a forma medusoide característica de diferentes grupos desse filo.";
         tituloDireita.textContent = "Curiosidades";
-        textoDireita.textContent = "Algumas espécies são bioluminescentes.";
-    } else if (e === 5) {
+        textoDireita.textContent = "Corpo composto principalmente por água: aproximadamente 95% do corpo das águas-vivas é formado por água, contribuindo para sua aparência gelatinosa.";
+    }else if (e === 22) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/aguaviva.glb";
+        tituloEsquerda.textContent = "Características da água-viva";
+        textoEsquerda.textContent = "Habitat: vivem principalmente em ambientes marinhos, ocupando diferentes profundidades e regiões dos oceanos.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = " Existem há centenas de milhões de anos: fósseis indicam que esses animais já existiam há aproximadamente 500 a 600 milhões de anos, sendo organismos muito antigos na história evolutiva.";
+    }else if (e === 23) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/aguaviva.glb";
+        tituloEsquerda.textContent = "Características da água-viva";
+        textoEsquerda.textContent = "Simetria radial: apresentam o corpo organizado ao redor de um eixo central, permitindo perceber estímulos provenientes de diferentes direções.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Algumas produzem luz: determinadas espécies apresentam bioluminescência, capacidade de produzir luz própria. Essa característica pode auxiliar na defesa contra predadores, na atração de presas e na reprodução.";
+    }else if (e === 24) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/aguaviva.glb";
+        tituloEsquerda.textContent = "Características da água-viva";
+        textoEsquerda.textContent = "Organização corporal: são animais diblásticos, com duas camadas de tecidos, a epiderme e a gastroderme, separadas por uma camada gelatinosa chamada mesogleia.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = " Podem causar queimaduras mesmo depois de mortas: os tentáculos de águas-vivas encalhadas podem continuar apresentando células urticantes capazes de provocar irritações ao entrar em contato com a pele.";
+    }else if (e === 25) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/aguaviva.glb";
+        tituloEsquerda.textContent = "Características da água-viva";
+        textoEsquerda.textContent = "Formato do corpo: possuem corpo semelhante a um sino ou guarda-chuva, com a boca localizada na parte inferior e tentáculos ao redor da região oral.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Existe uma espécie gigante: a água-viva-juba-de-leão (Cyanea capillata) é considerada uma das maiores águas-vivas conhecidas, podendo apresentar tentáculos muito longos.";
+    }else if (e === 26) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/aguaviva.glb";
+        tituloEsquerda.textContent = "Características da água-viva";
+        textoEsquerda.textContent = "Tentáculos e cnidócitos: apresentam tentáculos com células especializadas chamadas cnidócitos, que liberam estruturas urticantes utilizadas na captura de presas e na defesa.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Uma das águas-vivas mais perigosas: a vespa-do-mar (Chironex fleckeri) é conhecida por possuir veneno extremamente potente, sendo considerada uma das espécies mais perigosas para os seres humanos.";
+    }else if (e === 27) {
         mainContainer.className = "area-3d";
         conteudoEsquerda.style.display = "block";
         conteudoModelo.style.display = "block";
@@ -194,10 +458,106 @@ function carregarEtapa(e) {
 
         modelo.src = "Modelos3d/hidra.glb";
         tituloEsquerda.textContent = "Características da hidra";
-        textoEsquerda.textContent = "Pólipo de água doce com grande capacidade de regeneração.";
+        textoEsquerda.textContent = "Habitat: vive exclusivamente em ambientes de água doce, como lagos, lagoas e riachos de correnteza lenta, geralmente fixada em plantas aquáticas, pedras ou outros objetos submersos.";
+        tituloDireita.textContent = "Características";
+        textoDireita.textContent = "Organização corporal: apresenta corpo cilíndrico e alongado, formado por duas camadas celulares, a epiderme e a gastroderme, separadas pela mesogleia.";
+    }else if (e === 28) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/hidra.glb";
+        tituloEsquerda.textContent = "Características da hidra";
+        textoEsquerda.textContent = " Simetria radial: possui corpo organizado ao redor de um eixo central, característica comum aos cnidários.";
         tituloDireita.textContent = "Curiosidades";
-        textoDireita.textContent = "Elas praticamente não envelhecem!";
-    } else if (e === 6) {
+        textoDireita.textContent = "Regeneração extraordinária: quando dividida em partes, cada fragmento suficientemente viável pode reorganizar seus tecidos e desenvolver uma nova hidra completa, incluindo estruturas como tentáculos e disco basal.";
+    }else if (e === 29) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/hidra.glb";
+        tituloEsquerda.textContent = "Características da hidra";
+        textoEsquerda.textContent = "Tamanho: é um animal pequeno, geralmente com poucos milímetros de comprimento, podendo atingir aproximadamente 20 mm quando estendido.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Associada à ideia de imortalidade biológica: algumas espécies de hidra apresentam ausência aparente de envelhecimento em condições adequadas, sendo estudadas para compreender os mecanismos de renovação celular. Isso não significa que sejam invulneráveis ou incapazes de morrer.";
+    }else if (e === 30) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/hidra.glb";
+        tituloEsquerda.textContent = "Características da hidra";
+        textoEsquerda.textContent = "Região basal: apresenta um disco basal que permite sua fixação ao substrato por meio de uma secreção adesiva.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "A hidra-verde possui uma associação com algas: a espécie Hydra viridissima abriga algas verdes do gênero Chlorella em seus tecidos. As algas realizam fotossíntese e fornecem nutrientes, enquanto a hidra oferece proteção e condições para sua sobrevivência.";
+    }else if (e === 31) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/hidra.glb";
+        tituloEsquerda.textContent = "Características da hidra";
+        textoEsquerda.textContent = "Tentáculos e cnidócitos: possui tentáculos ao redor da abertura oral, utilizados na captura de alimentos e na defesa. Neles estão os cnidócitos, células urticantes que liberam nematocistos capazes de imobilizar pequenas presas.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = " Consegue realizar movimentos semelhantes a cambalhotas: pode se curvar, prender os tentáculos ao substrato e deslocar o disco basal, realizando movimentos conhecidos como cambalhotas.";
+    }else if (e === 32) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/hidra.glb";
+        tituloEsquerda.textContent = "Características da hidra";
+        textoEsquerda.textContent = " Sistema digestório: possui cavidade gastrovascular com uma única abertura, utilizada tanto para a ingestão de alimentos quanto para a eliminação de resíduos.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Pode sobreviver a condições ambientais desfavoráveis por meio de ovos resistentes: os ovos produzidos na reprodução sexuada apresentam envoltório resistente, podendo suportar condições como congelamento e dessecação.";
+    }else if (e === 33) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/hidra.glb";
+        tituloEsquerda.textContent = "Características da hidra";
+        textoEsquerda.textContent = " Alimentação: é carnívora e se alimenta principalmente de pequenos organismos aquáticos, como microcrustáceos, larvas de insetos e vermes.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Seu nome vem da mitologia grega: recebeu o nome da Hidra de Lerna, criatura mitológica que regenerava suas cabeças. A associação está relacionada à extraordinária capacidade de regeneração do animal.";
+    }else if (e === 34) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/hidra.glb";
+        tituloEsquerda.textContent = "Características da hidra";
+        textoEsquerda.textContent = " Locomoção: embora geralmente permaneça fixada, consegue se deslocar lentamente por movimentos de flexão do corpo, utilizando os tentáculos e o disco basal para mudar de posição.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Pode ser utilizada como indicador ambiental: devido à sua sensibilidade a determinadas condições de poluição, a hidra pode ser utilizada em pesquisas para avaliar efeitos de contaminantes na água..";
+    }else if (e === 35) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/hidra.glb";
+        tituloEsquerda.textContent = "Características da hidra";
+        textoEsquerda.textContent = "Reprodução: apresenta reprodução assexuada por brotamento e reprodução sexuada. Não possui fase medusa, permanecendo exclusivamente na forma de pólipo.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Pode capturar presas maiores que seu próprio corpo: apresenta grande capacidade de expansão corporal, permitindo envolver e digerir organismos relativamente grandes em comparação ao seu tamanho.";
+    } else if (e === 36) {
         mainContainer.className = "area-3d";
         conteudoEsquerda.style.display = "block";
         conteudoModelo.style.display = "block";
@@ -206,9 +566,69 @@ function carregarEtapa(e) {
 
         modelo.src = "Modelos3d/CaravelaPortuguesa.glb";
         tituloEsquerda.textContent = "Características da caravela";
-        textoEsquerda.textContent = "Colônia flutuante de organismos especializados.";
+        textoEsquerda.textContent = "Organização corporal: é formada por uma colônia de zooides geneticamente idênticos, especializados em diferentes funções, que dependem uns dos outros para sobreviver.";
         tituloDireita.textContent = "Curiosidades";
-        textoDireita.textContent = "Apesar de parecerem uma só, são vários pólipos trabalhando juntos.";
+        textoDireita.textContent = "Origem do nome: recebeu esse nome porque seu pneumatóforo lembra as velas dos navios.";
+    }else if (e === 37) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/CaravelaPortuguesa.glb";
+        tituloEsquerda.textContent = "Características da caravela";
+        textoEsquerda.textContent = " Pneumatóforo: possui uma bolsa preenchida por gás que permite sua flutuação na superfície do mar. Essa estrutura funciona como uma espécie de vela, sendo conduzida pelos ventos e pelas correntes marítimas.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Não é uma água-viva: apesar da aparência semelhante, pertence ao grupo dos sifonóforos. É formada por vários indivíduos unidos, que funcionam juntos como uma única unidade.";
+    }else if (e === 38) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/CaravelaPortuguesa.glb";
+        tituloEsquerda.textContent = "Características da caravela";
+        textoEsquerda.textContent = "Tentáculos e cnidócitos: apresenta longos tentáculos com dactilozoóides, utilizados na captura de presas e na defesa. Neles estão os cnidócitos, células que possuem nematocistos capazes de liberar veneno e paralisar pequenos animais.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Tentáculos muito longos: podem atingir aproximadamente 50 metros de comprimento, embora normalmente sejam menores.";
+    }else if (e === 39) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/CaravelaPortuguesa.glb";
+        tituloEsquerda.textContent = "Características da caravela";
+        textoEsquerda.textContent = " Alimentação: é carnívora, alimentando-se principalmente de pequenos peixes e organismos planctônicos. Os gastrozooides realizam a digestão das presas, distribuindo os nutrientes pela colônia.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = " Perigo mesmo após a morte: Seus tentáculos podem continuar causando lesões mesmo quando a caravela está morta ou encalhada na praia, pois as células urticantes permanecem ativas por algum tempo.";
+    }else if (e === 40) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/CaravelaPortuguesa.glb";
+        tituloEsquerda.textContent = "Características da caravela";
+        textoEsquerda.textContent = " Habitat: vive em águas marinhas tropicais e subtropicais, geralmente flutuando na superfície dos oceanos, onde é transportada pelos ventos e pelas correntes.";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Predadores naturais: apesar do veneno, possui predadores, como tartarugas marinhas e alguns organismos especializados em consumi-la.";
+    }else if (e === 41) {
+        mainContainer.className = "area-3d";
+        conteudoEsquerda.style.display = "block";
+        conteudoModelo.style.display = "block";
+        conteudoDireita.style.display = "block";
+        titulosContainer.style.display = "none"; 
+
+        modelo.src = "Modelos3d/CaravelaPortuguesa.glb";
+        tituloEsquerda.textContent = "Características da caravela";
+        textoEsquerda.textContent = "Reprodução: apresenta colônias masculinas e femininas, responsáveis pela produção de gametas. A fecundação ocorre provavelmente na água";
+        tituloDireita.textContent = "Curiosidades";
+        textoDireita.textContent = "Grandes agrupamentos: pode formar concentrações de numerosas caravelas.";
     }
 }
 
@@ -241,13 +661,13 @@ window.onload = function() {
 };
 
 botaoAvancar.addEventListener("click", function () {
-    if (etapa < 6) { 
+    if (etapa < 41) { 
         etapa++;
         carregarEtapa(etapa);
         salvarProgressoNoBanco(etapa);
     } else {
         alert("Aqui futuramente iremos para o quiz!");
-        etapa = 7;
+        etapa = 42;
         salvarProgressoNoBanco(etapa);
     }
 });
