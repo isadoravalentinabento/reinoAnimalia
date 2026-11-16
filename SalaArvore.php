@@ -15,6 +15,7 @@ $comando = $conexao->prepare($sql);
 $comando->bindValue('id_turma', $id_turma);
 $comando->execute();
 $turma = $comando->fetch();
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">

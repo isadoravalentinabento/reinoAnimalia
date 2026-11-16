@@ -17,7 +17,7 @@ $comando->execute();
 $turma = $comando->fetch();
 
 $id_aluno = $_SESSION['id_usuario'] ?? 1;
-$id_evolucao = 2;
+$id_evolucao = 1;
 
 $sqlProgresso = "SELECT etapa FROM progresso WHERE id_aluno = :id_aluno AND id_evolucao = :id_evolucao";
 $cmdProgresso = $conexao->prepare($sqlProgresso);
@@ -223,9 +223,7 @@ botaoAvancar.addEventListener("click", function () {
         carregarEtapa(etapa);
         salvarProgressoNoBanco(etapa);
     } else {
-        alert("Aqui futuramente iremos para o quiz!");
-        etapa = 6;
-        salvarProgressoNoBanco(etapa);
+       window.location.href = `quiz.php?id_evolucao=${idEvolucao}&id_turma=${idTurma}`;
     }
 });
 

@@ -666,9 +666,7 @@ botaoAvancar.addEventListener("click", function () {
         carregarEtapa(etapa);
         salvarProgressoNoBanco(etapa);
     } else {
-        alert("Aqui futuramente iremos para o quiz!");
-        etapa = 42;
-        salvarProgressoNoBanco(etapa);
+        window.location.href = `quiz.php?id_evolucao=${idEvolucao}&id_turma=${idTurma}`;
     }
 });
 
