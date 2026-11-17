@@ -47,3 +47,39 @@ a button:hover {
     background-color: #8b63e3;
     transform: scale(1.05);
 }
+.sala {
+    position: relative;
+}
+
+.badge-filo {
+    position: absolute;
+    z-index: 20;
+    pointer-events: none;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: bold;
+    padding: 3px 8px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+}
+
+.badge-filo.trancado {
+    background: rgba(4, 12, 53, 0.85);
+    border: 1px solid rgba(175, 229, 243, 0.3);
+    font-size: 14px;
+}
+
+.badge-filo.liberado {
+    background: #040C35;
+    color: #afe5f3;
+    border: 1.5px solid #afe5f3;
+}
+.zona-clique-filo {
+    position: absolute;
+    z-index: 30;
+    display: block;
+    background: transparent;
+}
