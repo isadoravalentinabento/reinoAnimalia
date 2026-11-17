@@ -1,0 +1,54 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    background-color: #d9dce3;
+    font-family: Georgia, "Times New Roman", serif;
+    color: #040C35;
+}
+
+h2 {
+    margin: 20px 22px 8px;
+    font-size: 22px;
+    font-weight: normal;
+}
+
+.lista-filos {
+    margin-bottom: 35px;
+}
+
+.filo-item {
+    width: calc(100% - 30px);
+    min-height: 58px;
+    margin: 0 auto;
+    padding: 5px 22px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #040C35;
+    color: white;
+    border-bottom: 1px solid white;
+}
+
+.filo-item:first-child {
+    border-radius: 15px 15px 0 0;
+}
+
+.filo-item:last-child {
+    border-radius: 0 0 15px 15px;
+    border-bottom: none;
+}
+
+.filo-nome {
+    font-size: 19px;
+    text-align: left;
+}
+
+.filo-porcentagem {
+    font-size: 19px;
+    font-weight: bold;
+    color: #afe5f3;
+    padding: 6px 14px;
+    border: 1px solid rgba(175, 229, 243, 0.5);
+    border-radius: 7px;
+}

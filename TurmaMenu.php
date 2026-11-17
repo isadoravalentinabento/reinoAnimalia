@@ -12,7 +12,7 @@
     <nav class="menu-turma">
         <a href="Turma.php?id=<?=$id_turma?>">Sala</a>
         <a href="Participantes.php?id=<?=$id_turma?>">Participantes</a>
-        <a href="#">Dados</a>
+        <a href="DadosTurma.php?id=<?= $id_turma ?>">Dados</a>
     </nav>
 </body>
 </html>
