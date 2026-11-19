@@ -17,9 +17,7 @@
         <a href="Perfil.php">
             <img src="img/icons/user (1).png" alt="Perfil">
         </a>
-        <a href="#">
-            <img src="img/icons/book.png" alt="Livro">
-        </a>
+        <a href="Historico.php?id=<?= $id_turma ?>"><img src="img/icons/book.png" alt="Livro"></a>
         <a href="Turma.php?id=<?=$id_turma?>">
             <img src="img/icons/sainda 2.png" alt="Saída">
         </a>

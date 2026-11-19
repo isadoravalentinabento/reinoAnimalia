@@ -159,7 +159,7 @@ $quizzes = [
             ]
         ]
     ],
-    8 => [ 
+    3 => [ 
         [
             "id_pergunta" => 6,
             "enunciado" => "Qual alternativa apresenta características e exemplos corretos do filo Platyhelminthes?",
@@ -311,7 +311,7 @@ $quizzes = [
             ]
         ]
     ],
-    3 => [ 
+    4 => [ 
             [
             "id_pergunta" => 11,
             "enunciado" => "Qual alternativa apresenta características corretas dos animais pseudocelomados?",
@@ -463,7 +463,7 @@ $quizzes = [
             ]
         ]
     ],
-    4 => [ 
+    7 => [ 
             [
             "id_pergunta" => 16,
             "enunciado" => " Qual alternativa apresenta características corretas do filo Mollusca?",
@@ -919,7 +919,7 @@ $quizzes = [
             ]
         ]
     ],
-    7 => [ 
+    8 => [ 
             [
             "id_pergunta" => 31,
             "enunciado" => "Qual alternativa apresenta características corretas do filo Echinodermata?",
