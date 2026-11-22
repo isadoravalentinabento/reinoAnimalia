@@ -71,7 +71,7 @@ $registro = $comando->fetchAll();
 
                     <h2>Você não está em nenhuma sala</h2>
 
-                    <a href='PesquisarTurma.php' class='btn-criar-sala'>
+                    <a href='ListagemTurma.php' class='btn-criar-sala'>
                         Pesquisar sala
                     </a>
 

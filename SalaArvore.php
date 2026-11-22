@@ -2,25 +2,31 @@
 include "configinc.php";
 include "validar.php";
 
-$id_turma = $_GET['id'] ?? 0;
+$id_turma = isset($_GET['id']) ? (int)$_GET['id'] : (int)($_SESSION['id_turma_atual'] ?? 0);
+$_SESSION['id_turma_atual'] = $id_turma;
 
 include "MenuArvore.php";
 
 $conexao = new PDO(dsn, usuario, senha);
-$sql = "SELECT nome_turma FROM turma WHERE id_turma = :id_turma";
-$comando = $conexao->prepare($sql);
-$comando->bindValue(':id_turma', $id_turma);
-$comando->execute();
-$turma = $comando->fetch();
 
-$id_aluno = $_SESSION['id_usuario'] ?? 1;
+if ($id_turma > 0) {
+    $sql = "SELECT nome_turma FROM turma WHERE id_turma = :id_turma";
+    $comando = $conexao->prepare($sql);
+    $comando->bindValue(':id_turma', $id_turma);
+    $comando->execute();
+    $turma = $comando->fetch();
+} else {
+    $turma = ['nome_turma' => 'Estudo Individual'];
+}
+
+$id_aluno = (int)($_SESSION['id_usuario'] ?? 0);
 $sqlProgresso = "SELECT id_evolucao, etapa, porcentagem 
                  FROM progresso 
                  WHERE id_aluno = :id_aluno AND id_turma = :id_turma";
 $stmt = $conexao->prepare($sqlProgresso);
 $stmt->execute([
     ':id_aluno' => $id_aluno,
-    ':id_turma' => (int)$id_turma
+    ':id_turma' => $id_turma
 ]);
 
 $registros = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -71,7 +77,6 @@ if (!isset($statusFilos[1])) {
 const statusFilos = <?php echo json_encode($statusFilos); ?>;
 const idTurma = <?php echo (int)$id_turma; ?>;
 
-
 const coordenadasOriginais = {
     8: [682, 24, 1027, 97],    
     7: [671, 161, 901, 225],   
@@ -88,10 +93,8 @@ function desenharBadgesArvore() {
     const img = document.getElementById("arvore");
     if (!sala || !img || !img.naturalWidth) return;
 
-
     document.querySelectorAll(".badge-filo, .zona-clique-filo").forEach(el => el.remove());
 
-    
     const escalaX = img.clientWidth / img.naturalWidth;
     const escalaY = img.clientHeight / img.naturalHeight;
 
@@ -117,7 +120,6 @@ function desenharBadgesArvore() {
         const info = statusFilos[idFilo];
         const liberado = info && info.liberado === true;
         const porcentagem = info ? info.porcentagem : 0;
-
 
         const linkFilo = document.createElement("a");
         linkFilo.className = "zona-clique-filo";
@@ -154,7 +156,6 @@ function desenharBadgesArvore() {
         sala.appendChild(badge);
     });
 }
-
 
 const imgArvore = document.getElementById("arvore");
 if (imgArvore.complete) {

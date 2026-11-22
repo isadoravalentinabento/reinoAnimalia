@@ -13,7 +13,7 @@
     <nav>
         <a href="AlunoInicio.php">Minhas Turmas</a>
         <a href="ListagemTurma.php">Pesquisar Turmas</a>
-        <a href="#">Entrar</a>
+        <a href="SalaArvore.php?id=0">Entrar</a>
 
         <div class="menu">
             <button class="menu-botao"><img src="img/icons/menu (2).png" alt="icons"></button>

@@ -72,6 +72,7 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
                     <li><strong>Sistema nervoso e órgãos sensoriais:</strong>apresentam um par de gânglios nervosos na região anterior, que funciona como um cérebro simples, ligado a um cordão nervoso ventral. Ao longo do corpo, existem outros gânglios que ajudam a coordenar os movimentos. Dependendo da espécie, podem apresentar receptores táteis, células sensíveis à luz e outras estruturas que permitem perceber estímulos ambientais.</li>
                     <li><strong>Reprodução sexuada:</strong>a reprodução varia conforme o grupo. Muitas minhocas e sanguessugas são hermafroditas, ou seja, cada indivíduo possui estruturas reprodutoras masculinas e femininas, mas geralmente ocorre troca de espermatozoides entre indivíduos. Já muitos poliquetas possuem sexos separados, com machos e fêmeas distintos.</li>
                     <li><strong>Desenvolvimento e reprodução:</strong>algumas espécies apresentam desenvolvimento direto, sem fase larval, como ocorre nas minhocas. Muitos anelídeos marinhos, por outro lado, apresentam desenvolvimento indireto, com uma fase larval chamada trocófora. Em determinadas espécies, também pode ocorrer reprodução assexuada por fragmentação ou brotamento.</li>
+                    <li><strong>Triblásticos:</strong> apresentam três folhetos embrionários, ectoderma, mesoderma e endoderma, que dão origem aos diferentes tecidos e órgãos do corpo.  </li>
                 </ul>
             </div>
         </section>

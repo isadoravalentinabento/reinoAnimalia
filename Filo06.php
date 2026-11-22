@@ -59,6 +59,7 @@ $etapaInicial = $dadosProgresso ? $dadosProgresso['etapa'] : 0;
                     <li><strong>Muda ou ecdise:</strong> como o exoesqueleto rígido não cresce continuamente junto com o corpo, os artrópodes precisam trocá-lo em determinados momentos. Durante esse processo, o animal abandona o exoesqueleto antigo e forma outro, permitindo o crescimento. Enquanto o novo revestimento ainda está endurecendo, o corpo fica mais vulnerável.</li>
                     <li><strong>Sistema muscular desenvolvido:</strong> os músculos ficam ligados à parte interna do exoesqueleto e permitem movimentos precisos e variados. Essa organização possibilita atividades como caminhar, saltar, nadar e, em muitos insetos, voar.</li>
                     <li><strong>Sistema digestório completo:</strong> possuem boca e ânus, com um tubo digestório que permite a passagem do alimento em um único sentido. As peças bucais variam de acordo com a alimentação: alguns artrópodes trituram alimentos sólidos, enquanto outros apresentam estruturas adaptadas para sugar líquidos ou capturar presas.</li>
+                     <li><strong>Triblásticos</strong> apresentam três folhetos embrionários, ectoderma, mesoderma e endoderma, que dão origem aos diferentes tecidos e órgãos.</li>
                 </ul>
             </div>
         </section>
