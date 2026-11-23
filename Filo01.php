@@ -185,7 +185,7 @@ function carregarEtapa(e) {
         tituloEsquerda.textContent = "Características da esponja";
         textoEsquerda.textContent = "Defesas químicas: como não conseguem fugir dos predadores, algumas esponjas produzem substâncias químicas que dificultam o ataque de outros animais ou a ocupação do espaço por organismos concorrentes.";
         tituloDireita.textContent = "Curiosidades";
-        textoDireita.textContent = "mais assunto, ou add imagem";
+        textoDireita.textContent = "As esponja estão entre os animais mais antigos do planeta";
     }
 }
 
