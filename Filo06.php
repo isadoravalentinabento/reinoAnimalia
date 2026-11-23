@@ -17,7 +17,7 @@ $comando->execute();
 $turma = $comando->fetch();
 
 $id_aluno = $_SESSION['id_usuario'] ?? 1;
-$id_evolucao = 2;
+$id_evolucao = 6;
 
 $sqlProgresso = "SELECT etapa FROM progresso WHERE id_aluno = :id_aluno AND id_evolucao = :id_evolucao";
 $cmdProgresso = $conexao->prepare($sqlProgresso);
